@@ -5,13 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Amigos do Sangue - Angatuba e Região</title>
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Ícones Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <!-- Configuração do Tailwind para Cores e Dark Mode -->
     <script>
         tailwind.config = {
@@ -139,8 +134,8 @@
 
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center gap-3 cursor-pointer">
-                    <img src="./assets/logo-lightmode.png" alt="Amigos do Sangue" class="h-10 dark:hidden">
-                    <img src="./assets/logo-darkmode.png" alt="Amigos do Sangue" class="h-10 hidden dark:block">
+                    <img src="./assets/logo.png" alt="Amigos do Sangue" class="h-10 dark:hidden">
+                    <img src="./assets/logo.png" alt="Amigos do Sangue" class="h-10 hidden dark:block">
                 </a>
 
                 <!-- Navegação Desktop -->
@@ -198,8 +193,8 @@
                     <!-- Botão UBS (Apenas Desktop) -->
                     <a href="admin/login.html"
                         class="hidden md:flex bg-brand hover:bg-brandHover text-white px-5 py-2.5 rounded-xl font-bold transition-colors shadow-md items-center gap-2">
-                        <i data-lucide="calendar-plus" class="w-5 h-5"></i>
-                        Área da UBS
+                        <i data-lucide="user-plus" class="w-5 h-5"></i>
+                        Perfil
                     </a>
 
                     <!-- Botão Menu Mobile -->
@@ -244,13 +239,13 @@
                         Doe sangue, salve vidas perto de você.
                     </h2>
                     <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 font-medium">
-                        Conectamos organizadores de campanhas a doadores voluntários. Descubra ações perto de sua casa,
+                        Descubra ações perto de sua casa,
                         inscreva-se facilmente e ajude a abastecer os hemocentros de sua região.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="campanhas.html"
                             class="bg-brand hover:bg-brandHover text-white px-8 py-4 rounded-xl font-bold transition-colors shadow-lg text-center flex items-center justify-center gap-2">
-                            <i data-lucide="search" class="w-5 h-5"></i> Campanhas em Andamento
+                            <i data-lucide="search" class="w-5 h-5"></i> Campanhas
                         </a>
                         <a href="educativo.html"
                             class="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-white px-8 py-4 rounded-xl font-bold transition-colors text-center">
@@ -287,7 +282,7 @@
             <div class="flex justify-between items-end mb-10">
                 <div>
                     <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Campanhas</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mt-1">Próximas ações confirmadas!</p>
+                    <p class="text-gray-600 dark:text-gray-400 mt-1">Ações confirmadas!</p>
                 </div>
                 <a href="campanhas.html" class="text-brand font-bold hover:underline hidden sm:block">Ver todas</a>
             </div>
@@ -312,23 +307,19 @@
 
                     <div class="p-5 flex-grow flex flex-col">
                         <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">
-                            Campanha do Dia Mundial do Doador
+                            Campanha Mês Amarelo
                         </h4>
-
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                            UBS Central Angatuba
-                        </p>
 
                         <div class="space-y-2 mt-auto mb-5">
                             <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                                 <i data-lucide="calendar" class="w-4 h-4 text-brand shrink-0"></i>
-                                <span class="text-sm">Hoje, 11 de Maio — 07:00 às 17:00</span>
+                                <span class="text-sm">11 de Maio - Saída:  05:00h</span>
                             </div>
 
                             <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                                 <i data-lucide="map-pin" class="w-4 h-4 text-brand shrink-0"></i>
                                 <span class="text-sm line-clamp-1">
-                                    Ginásio Municipal, Av. Principal
+                                    Colsan - Posto de Coleta Sorocaba
                                 </span>
                             </div>
                         </div>
@@ -348,20 +339,19 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                         <span
                             class="absolute top-3 left-3 bg-gray-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                            Finalizada
+                            Encerrada
                         </span>
                     </div>
                     <div class="p-5 flex-grow flex flex-col">
-                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Mutirão Solidário de Maio</h4>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">UBS Vila Nova — Angatuba</p>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Mutirão Solidário de Abril</h4>
                         <div class="space-y-2 mt-auto mb-5">
                             <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                                 <i data-lucide="calendar" class="w-4 h-4 text-gray-400 shrink-0"></i>
-                                <span class="text-sm line-through text-gray-400">Sábado, 03 de Maio — 08:00</span>
+                                <span class="text-sm line-through text-gray-400">03 de Abril - Saída: 05:00</span>
                             </div>
                             <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                                 <i data-lucide="map-pin" class="w-4 h-4 text-gray-400 shrink-0"></i>
-                                <span class="text-sm line-clamp-1 text-gray-400">Centro Comunitário, Bairro Alto</span>
+                                <span class="text-sm line-clamp-1 text-gray-400">Colsan - Posto de Coleta Sorocaba</span>
                             </div>
                         </div>
                         <span
@@ -382,7 +372,7 @@
 
                 <div class="flex items-center gap-2 opacity-80">
                     <i data-lucide="droplet" class="w-5 h-5 text-brand"></i>
-                    <span class="font-bold text-gray-900 dark:text-white">Amigos do Sangue</span>
+                    <span class="font-bold text-gray-900 dark:text-white">Rota Solidária</span>
                     <span class="text-gray-500 text-sm ml-2">© 2026</span>
                 </div>
 

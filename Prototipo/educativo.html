@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Amigos do Sangue - Saiba Mais (Guia do Doador)</title>
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Ícones Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
     <!-- Configuração do Tailwind para Cores e Dark Mode -->
     <script>
         tailwind.config = {
@@ -121,8 +116,8 @@
                 
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center gap-3 cursor-pointer">
-                    <img src="./assets/logo-lightmode.png" alt="Amigos do Sangue" class="h-10 dark:hidden">
-                    <img src="./assets/logo-darkmode.png" alt="Amigos do Sangue" class="h-10 hidden dark:block">
+                    <img src="./assets/logo.png" alt="Amigos do Sangue" class="h-10 dark:hidden">
+                    <img src="./assets/logo.png" alt="Amigos do Sangue" class="h-10 hidden dark:block">
                 </a>
 
                 <!-- Navegação Desktop -->
@@ -165,8 +160,8 @@
 
                     <!-- Botão UBS -->
                     <a href="admin/login.html" class="hidden md:flex bg-brand hover:bg-brandHover text-white px-5 py-2.5 rounded-xl font-bold transition-colors shadow-md items-center gap-2">
-                        <i data-lucide="calendar-plus" class="w-5 h-5"></i>
-                        Área da UBS
+                        <i data-lucide="user-plus" class="w-5 h-5"></i>
+                        Perfil
                     </a>
 
                     <!-- Botão Menu Mobile -->
@@ -219,7 +214,7 @@
                         <i data-lucide="user" class="w-8 h-8 text-brand flex-shrink-0 mt-1"></i>
                         <div>
                             <h4 class="font-bold text-gray-900 dark:text-white text-lg">Idade</h4>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Ter entre 16 e 69 anos. (Menores de 18 anos precisam de autorização dos responsáveis legais).</p>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Ter entre 16 e 69 anos.</p>
                         </div>
                     </div>
                     
@@ -271,14 +266,14 @@
                     <div class="relative pl-8 md:pl-10">
                         <div class="absolute w-8 h-8 bg-brand rounded-full text-white font-bold flex items-center justify-center -left-[17px] top-0 shadow-md">2</div>
                         <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Triagem Clínica</h4>
-                        <p class="text-gray-600 dark:text-gray-400">Uma entrevista rápida, sigilosa e confidencial com um profissional de saúde para avaliar se a doação é segura para você e para quem vai receber o sangue. Também são verificados pressão arterial, batimentos e anemia.</p>
+                        <p class="text-gray-600 dark:text-gray-400">Uma entrevista rápida, sigilosa e confidencial com um profissional de saúde para avaliar se a doação é segura para você. Também são verificados pressão arterial, batimentos e anemia.</p>
                     </div>
 
                     <!-- Passo 3 -->
                     <div class="relative pl-8 md:pl-10">
                         <div class="absolute w-8 h-8 bg-brand rounded-full text-white font-bold flex items-center justify-center -left-[17px] top-0 shadow-md">3</div>
                         <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Coleta do Sangue</h4>
-                        <p class="text-gray-600 dark:text-gray-400">A doação em si é rápida e segura. Todo o material utilizado é descartável e de uso único. São coletados aproximadamente 450ml de sangue, o que leva de 10 a 15 minutos.</p>
+                        <p class="text-gray-600 dark:text-gray-400">A doação em si é rápida e segura. Todo o material utilizado é descartável e de uso único.</p>
                     </div>
 
                     <!-- Passo 4 -->
@@ -291,47 +286,7 @@
                 </div>
             </section>
 
-            <!-- Seção 3: Mitos e Verdades (FAQ) -->
-            <section>
-                <div class="flex items-center gap-3 mb-8">
-                    <div class="bg-red-100 dark:bg-red-900/30 p-3 rounded-xl text-brand">
-                        <i data-lucide="help-circle" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Mitos e Verdades</h3>
-                </div>
-
-                <div class="space-y-4">
-                    
-                    <div class="bg-white dark:bg-darkCard border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-sm">
-                        <h4 class="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2 mb-2">
-                            <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i> Doar sangue engrossa ou afina o sangue?
-                        </h4>
-                        <p class="text-gray-600 dark:text-gray-400"><strong>Mito.</strong> A doação não altera a espessura ou a estrutura do sangue. O volume doado é reposto rapidamente pelo organismo.</p>
-                    </div>
-
-                    <div class="bg-white dark:bg-darkCard border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-sm">
-                        <h4 class="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2 mb-2">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> O material usado é seguro?
-                        </h4>
-                        <p class="text-gray-600 dark:text-gray-400"><strong>Verdade.</strong> Todo material utilizado para a coleta de sangue é estéril, descartável e de uso único. Não há qualquer risco de contrair doenças infecciosas doando sangue.</p>
-                    </div>
-
-                    <div class="bg-white dark:bg-darkCard border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-sm">
-                        <h4 class="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2 mb-2">
-                            <i data-lucide="x-circle" class="w-5 h-5 text-red-500"></i> Tatuagem ou piercing impede a doação para sempre?
-                        </h4>
-                        <p class="text-gray-600 dark:text-gray-400"><strong>Mito.</strong> Pessoas com tatuagem, maquiagem definitiva ou micropigmentação só precisam aguardar <strong>12 meses</strong> após o procedimento para poderem doar novamente. (Piercing na boca ou região genital pode ser um impeditivo permanente, dependendo da avaliação).</p>
-                    </div>
-
-                    <div class="bg-white dark:bg-darkCard border border-gray-200 dark:border-gray-800 rounded-2xl p-6 shadow-sm">
-                        <h4 class="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2 mb-2">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Posso trabalhar no dia da doação?
-                        </h4>
-                        <p class="text-gray-600 dark:text-gray-400"><strong>Verdade.</strong> O doador tem direito a um dia de folga no trabalho a cada 12 meses de doação de sangue voluntária, conforme a CLT (Artigo 473). O hemocentro/organizador emitirá um atestado.</p>
-                    </div>
-
-                </div>
-            </section>
+            
 
             <!-- Chamada para Ação -->
             <div class="bg-brand text-white rounded-3xl p-8 md:p-12 text-center shadow-lg relative overflow-hidden mt-10">
@@ -355,7 +310,7 @@
                 
                 <div class="flex items-center gap-2 opacity-80">
                     <i data-lucide="droplet" class="w-5 h-5 text-brand"></i>
-                    <span class="font-bold text-gray-900 dark:text-white">Amigos do Sangue</span>
+                    <span class="font-bold text-gray-900 dark:text-white">Rota Solidária</span>
                     <span class="text-gray-500 text-sm ml-2">© 2026</span>
                 </div>
 

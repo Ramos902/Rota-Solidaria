@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Amigos do Sangue - Inscrição na Campanha</title>
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Ícones Lucide -->
+
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <!-- Configuração do Tailwind para Cores e Dark Mode -->
@@ -121,8 +118,8 @@
                 
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center gap-3 cursor-pointer">
-                    <img src="./assets/logo-lightmode.png" alt="Amigos do Sangue" class="h-10 dark:hidden">
-                    <img src="./assets/logo-darkmode.png" alt="Amigos do Sangue" class="h-10 hidden dark:block">
+                    <img src="./assets/logo.png" alt="Amigos do Sangue" class="h-10 dark:hidden">
+                    <img src="./assets/logo.png" alt="Amigos do Sangue" class="h-10 hidden dark:block">
                 </a>
 
                 <!-- Navegação Desktop -->
@@ -215,71 +212,27 @@
                             Inscrições Abertas
                         </span>
                         
-                        <h2 class="text-3xl sm:text-4xl font-extrabold mb-2 leading-tight">Campanha Solidária de Inverno</h2>
-                        <p class="text-red-100 font-medium mb-8 text-lg">Organizado por: UBS Central Angatuba</p>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold mb-2 leading-tight">Campanha Mês Amarelo</h2>
+                        <p class="text-red-100 font-medium mb-8 text-lg">Organizado por: Rota Solidária</p>
                         
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div class="flex items-start gap-4">
                                 <div class="bg-white/20 p-3 rounded-xl backdrop-blur-sm"><i data-lucide="calendar-clock" class="w-6 h-6"></i></div>
                                 <div>
-                                    <span class="block font-bold text-lg">Sábado, 15 de Junho</span>
-                                    <span class="text-red-100 text-sm font-medium">08:00 às 16:00 (Chegar com 15 min de antecedência)</span>
+                                    <span class="block font-bold text-lg">Sábado, 11 de Maio</span>
+                                    <span class="text-red-100 text-sm font-medium">05:00 às 16:00</span>
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
                                 <div class="bg-white/20 p-3 rounded-xl backdrop-blur-sm"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
                                 <div>
-                                    <span class="block font-bold text-lg">Posto de Saúde Central</span>
-                                    <span class="text-red-100 text-sm font-medium">Rua Principal, 123 - Centro<br>Angatuba, SP</span>
+                                    <span class="block font-bold text-lg">Colsan - Posto de Coleta Sorocaba</span>
+                                    <span class="text-red-100 text-sm font-medium">Av. Comendador Pereira Inácio, 564 - Jardim Vergueiro<br>Sorocaba, SP</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Parte Inferior: Formulário de Inscrição -->
-                <div class="p-8 sm:p-10">
-                    <div class="mb-8 border-b border-gray-200 dark:border-gray-800 pb-6">
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
-                            <i data-lucide="clipboard-edit" class="w-6 h-6 text-brand"></i> Preencha seus dados
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400 font-medium">Garanta sua vaga para doação. O processo de inscrição leva menos de 2 minutos.</p>
-                    </div>
-
-                    <!-- Note que a action aponta para a próxima tela do seu fluxo (sucesso.html) -->
-                    <form action="sucesso.html" method="GET" class="space-y-6">
-                        
-                        <!-- Nome Completo -->
-                        <div>
-                            <label class="block text-sm font-bold text-gray-900 dark:text-white mb-2">Nome Completo <span class="text-brand">*</span></label>
-                            <input type="text" required placeholder="Digite seu nome completo conforme documento" class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl py-3.5 px-4 font-medium focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand dark:text-white transition-all shadow-sm">
-                        </div>
-                        
-                        <!-- Telefone e Tipo Sanguíneo (Grid) -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-bold text-gray-900 dark:text-white mb-2">Telefone / WhatsApp <span class="text-brand">*</span></label>
-                                <input type="tel" required placeholder="(15) 90000-0000" class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl py-3.5 px-4 font-medium focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand dark:text-white transition-all shadow-sm">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-gray-900 dark:text-white mb-2">Tipo Sanguíneo <span class="text-gray-500 font-normal">(Opcional)</span></label>
-                                <div class="relative">
-                                    <select class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl py-3.5 px-4 font-medium focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand dark:text-white transition-all shadow-sm appearance-none">
-                                        <option value="">Não sei informar</option>
-                                        <option value="O+">O+</option>
-                                        <option value="O-">O-</option>
-                                        <option value="A+">A+</option>
-                                        <option value="A-">A-</option>
-                                        <option value="B+">B+</option>
-                                        <option value="B-">B-</option>
-                                        <option value="AB+">AB+</option>
-                                        <option value="AB-">AB-</option>
-                                    </select>
-                                    <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 pointer-events-none"></i>
-                                </div>
-                            </div>
-                        </div>
-
                         <!-- Aviso Legal -->
                         <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-xl border border-blue-200 dark:border-blue-800 mt-6 flex items-start gap-3">
                             <i data-lucide="shield-check" class="w-6 h-6 flex-shrink-0 text-blue-600 dark:text-blue-400 mt-0.5"></i>
@@ -288,10 +241,21 @@
                             </p>
                         </div>
 
-                        <!-- Botão de Envio -->
-                        <button type="submit" class="w-full bg-brand hover:bg-brandHover text-white font-bold py-4 rounded-xl transition-colors shadow-lg text-lg mt-8 flex justify-center items-center gap-2">
-                            Confirmar Inscrição na Campanha <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        <!-- Botões -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+
+                        <!-- Botão Inscrição -->
+                        <button type="submit" class="w-full bg-brand hover:bg-brandHover text-white font-bold py-4 rounded-xl transition-colors shadow-lg text-lg flex justify-center items-center gap-2">
+                        Fazer Inscrição
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </button>
+
+                        <!-- Botão Cadastro -->
+                        <a href="cadastro.html" class="w-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-white font-bold py-4 rounded-xl transition-colors shadow-lg text-lg flex justify-center items-center gap-2">
+                                Não tenho cadastro
+                            <i data-lucide="user-plus" class="w-5 h-5"></i>
+                        </a>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -313,7 +277,7 @@
                 
                 <div class="flex items-center gap-2 opacity-80">
                     <i data-lucide="droplet" class="w-5 h-5 text-brand"></i>
-                    <span class="font-bold text-gray-900 dark:text-white">Amigos do Sangue</span>
+                    <span class="font-bold text-gray-900 dark:text-white">Rota Solidária</span>
                     <span class="text-gray-500 text-sm ml-2">© 2026</span>
                 </div>
 
