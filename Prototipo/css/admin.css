@@ -1,0 +1,105 @@
+html:not(.dark):not(.alto-contraste) .bg-gray-50 {
+    background-color: #f9fafb !important;
+}
+
+.field-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #f9fafb;
+    color: #111827;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field-input:focus {
+    border-color: #d50000;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(213, 0, 0, 0.08);
+}
+
+.field-input:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.dark .field-input {
+    border-color: #374151;
+    background: #1a1a1a;
+    color: #f3f4f6;
+}
+
+.dark .field-input:focus {
+    border-color: #d50000;
+    background: #121212;
+    box-shadow: 0 0 0 3px rgba(213, 0, 0, 0.12);
+}
+
+.radio-tab input[type="radio"] {
+    display: none;
+}
+
+.radio-tab label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #f9fafb;
+    color: #6b7280;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.radio-tab input[type="radio"]:checked + label {
+    border-color: #d50000;
+    background: #fff1f1;
+    color: #d50000;
+}
+
+.dark .radio-tab label {
+    border-color: #374151;
+    background: #1a1a1a;
+    color: #9ca3af;
+}
+
+.dark .radio-tab input[type="radio"]:checked + label {
+    border-color: #d50000;
+    background: rgba(213, 0, 0, 0.1);
+    color: #ff6b6b;
+}
+
+.no-left-border {
+    border-left: none;
+}
+
+.modal-backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#preview-box {
+    transition: all 0.3s ease;
+}
+
+#toast {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#toast.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
