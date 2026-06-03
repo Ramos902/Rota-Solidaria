@@ -1,0 +1,29 @@
+html:not(.dark):not(.alto-contraste) .bg-gray-50 {
+    background-color: #ffffff !important;
+}
+
+.pattern-dots-light {
+    background-image: radial-gradient(#ffffff 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+}
+
+.pattern-dots-success {
+    background-image: radial-gradient(#10b981 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
