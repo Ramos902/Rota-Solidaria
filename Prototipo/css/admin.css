@@ -1,25 +1,70 @@
 html:not(.dark):not(.alto-contraste) .bg-gray-50 {
-    background-color: #f9fafb !important;
+    background-color: transparent !important;
+}
+
+main h1,
+main h2 {
+    color: var(--ink-strong);
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.dark main h1,
+.dark main h2 {
+    color: #fffdf8;
+}
+
+main > div > div[class*="bg-white"],
+main section[class*="bg-white"],
+main form[class*="bg-white"] {
+    border-top: 5px solid var(--accent) !important;
+    background: var(--surface) !important;
+}
+
+.dark main > div > div[class*="bg-white"],
+.dark main section[class*="bg-white"],
+.dark main form[class*="bg-white"] {
+    background: var(--dark-card) !important;
+}
+
+main table {
+    border-collapse: collapse;
+}
+
+main th {
+    color: var(--muted);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+main td {
+    border-color: var(--line) !important;
+}
+
+main tr:hover td {
+    background: rgba(80, 102, 83, 0.055);
 }
 
 .field-input {
     width: 100%;
     padding: 0.75rem 1rem;
-    border: 1.5px solid #e5e7eb;
-    border-radius: 0.75rem;
-    background: #f9fafb;
-    color: #111827;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 253, 248, 0.92);
+    color: var(--ink);
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
     outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
 }
 
 .field-input:focus {
-    border-color: #d50000;
-    background: #ffffff;
-    box-shadow: 0 0 0 3px rgba(213, 0, 0, 0.08);
+    border-color: var(--accent);
+    background: var(--surface);
+    box-shadow: 0 0 0 3px rgba(80, 102, 83, 0.14);
 }
 
 .field-input:disabled {
@@ -28,15 +73,15 @@ html:not(.dark):not(.alto-contraste) .bg-gray-50 {
 }
 
 .dark .field-input {
-    border-color: #374151;
-    background: #1a1a1a;
-    color: #f3f4f6;
+    border-color: var(--dark-line);
+    background: #201d19;
+    color: #fffdf8;
 }
 
 .dark .field-input:focus {
-    border-color: #d50000;
-    background: #121212;
-    box-shadow: 0 0 0 3px rgba(213, 0, 0, 0.12);
+    border-color: #7f987f;
+    background: #171512;
+    box-shadow: 0 0 0 3px rgba(127, 152, 127, 0.14);
 }
 
 .radio-tab input[type="radio"] {
@@ -47,34 +92,34 @@ html:not(.dark):not(.alto-contraste) .bg-gray-50 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    border: 1.5px solid #e5e7eb;
-    border-radius: 0.75rem;
-    background: #f9fafb;
-    color: #6b7280;
+    padding: 0.75rem 1.1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 253, 248, 0.7);
+    color: var(--muted);
     cursor: pointer;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.84rem;
+    font-weight: 800;
     transition: all 0.2s;
     user-select: none;
 }
 
 .radio-tab input[type="radio"]:checked + label {
-    border-color: #d50000;
-    background: #fff1f1;
-    color: #d50000;
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent);
 }
 
 .dark .radio-tab label {
-    border-color: #374151;
-    background: #1a1a1a;
-    color: #9ca3af;
+    border-color: var(--dark-line);
+    background: #201d19;
+    color: #c9c0b3;
 }
 
 .dark .radio-tab input[type="radio"]:checked + label {
-    border-color: #d50000;
-    background: rgba(213, 0, 0, 0.1);
-    color: #ff6b6b;
+    border-color: #7f987f;
+    background: rgba(127, 152, 127, 0.13);
+    color: #c8dec8;
 }
 
 .no-left-border {
@@ -82,14 +127,16 @@ html:not(.dark):not(.alto-contraste) .bg-gray-50 {
 }
 
 .modal-backdrop {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(20, 18, 15, 0.62);
 }
 
 #preview-box {
-    transition: all 0.3s ease;
+    transition: all 0.24s ease;
 }
 
 #toast {
+    border: 1px solid rgba(255, 253, 248, 0.18);
+    box-shadow: var(--shadow-lift) !important;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 

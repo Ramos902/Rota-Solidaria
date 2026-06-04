@@ -15,8 +15,8 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: '#D50000',
-                        brandHover: '#9B0000',
+                        brand: '#B4232A',
+                        brandHover: '#8F1821',
                         darkBg: '#000000',
                         darkCard: '#121212',
                         darkPanel: '#0a0a0a'
@@ -26,183 +26,8 @@
         }
     </script>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-        html {
-            font-size: 18px;
-            transition: font-size 0.3s ease;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-        }
-
-        html:not(.dark):not(.alto-contraste) .text-gray-400,
-        html:not(.dark):not(.alto-contraste) .text-gray-500,
-        html:not(.dark):not(.alto-contraste) .text-gray-600 {
-            color: #1a1a1a !important;
-            font-weight: 600 !important;
-        }
-
-        html:not(.dark):not(.alto-contraste) .border-gray-100,
-        html:not(.dark):not(.alto-contraste) .border-gray-200 {
-            border-color: #cccccc !important;
-        }
-
-        html:not(.dark):not(.alto-contraste) .bg-gray-50 {
-            background-color: #f9fafb !important;
-        }
-
-        html.alto-contraste body,
-        html.alto-contraste main,
-        html.alto-contraste header,
-        html.alto-contraste footer,
-        html.alto-contraste div {
-            background-color: #000000 !important;
-            color: #FFFFFF !important;
-            border-color: #FFFF00 !important;
-        }
-
-        html.alto-contraste h1,
-        html.alto-contraste h2,
-        html.alto-contraste h3,
-        html.alto-contraste h4,
-        html.alto-contraste p,
-        html.alto-contraste span,
-        html.alto-contraste i,
-        html.alto-contraste label,
-        html.alto-contraste li,
-        html.alto-contraste th,
-        html.alto-contraste td {
-            color: #FFFFFF !important;
-        }
-
-        html.alto-contraste a,
-        html.alto-contraste button {
-            color: #FFFF00 !important;
-            border-color: #FFFF00 !important;
-        }
-
-        html.alto-contraste .bg-brand,
-        html.alto-contraste .bg-gray-100,
-        html.alto-contraste .bg-gray-200,
-        html.alto-contraste .bg-red-50,
-        html.alto-contraste .bg-white,
-        html.alto-contraste input,
-        html.alto-contraste select,
-        html.alto-contraste textarea {
-            background-color: #000000 !important;
-            border: 2px solid #FFFF00 !important;
-            color: #FFFF00 !important;
-        }
-
-        html.alto-contraste .text-brand {
-            color: #FFFF00 !important;
-        }
-
-        * {
-            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
-        }
-
-        #mobile-menu.hidden {
-            display: none;
-        }
-
-        /* Campos de formulário */
-        .field-input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border-radius: 0.75rem;
-            border: 1.5px solid #e5e7eb;
-            background: #f9fafb;
-            color: #111827;
-            font-size: 0.9rem;
-            font-weight: 500;
-            font-family: 'Inter', sans-serif;
-            outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        .field-input:focus {
-            border-color: #D50000;
-            box-shadow: 0 0 0 3px rgba(213, 0, 0, 0.08);
-            background: #fff;
-        }
-
-        .dark .field-input {
-            background: #1a1a1a;
-            border-color: #374151;
-            color: #f3f4f6;
-        }
-
-        .dark .field-input:focus {
-            border-color: #D50000;
-            background: #121212;
-            box-shadow: 0 0 0 3px rgba(213, 0, 0, 0.12);
-        }
-
-        /* Radio tabs do tipo de inscrição */
-        .radio-tab input[type="radio"] {
-            display: none;
-        }
-
-        .radio-tab label {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
-            border-radius: 0.75rem;
-            border: 1.5px solid #e5e7eb;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: #6b7280;
-            background: #f9fafb;
-            transition: all 0.2s;
-            user-select: none;
-        }
-
-        .radio-tab input[type="radio"]:checked+label {
-            border-color: #D50000;
-            background: #fff1f1;
-            color: #D50000;
-        }
-
-        .dark .radio-tab label {
-            background: #1a1a1a;
-            border-color: #374151;
-            color: #9ca3af;
-        }
-
-        .dark .radio-tab input[type="radio"]:checked+label {
-            background: rgba(213, 0, 0, 0.1);
-            border-color: #D50000;
-            color: #ff6b6b;
-        }
-
-        /* Preview do botão */
-        #preview-box {
-            transition: all 0.3s ease;
-        }
-
-        /* Toast */
-        #toast {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        #toast.hidden {
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(8px);
-        }
-
-        #toast.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body
@@ -462,9 +287,8 @@
                                     <div class="flex gap-2">
                                         <span
                                             class="field-input w-auto px-3 flex items-center text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 border-r-0 rounded-r-none text-sm font-bold whitespace-nowrap">+55</span>
-                                        <input id="campo-whatsapp" type="tel" class="field-input rounded-l-none"
-                                            placeholder="11 99999-9999" oninput="atualizarPreview()"
-                                            style="border-left: none;">
+                                        <input id="campo-whatsapp" type="tel" class="field-input rounded-l-none no-left-border"
+                                            placeholder="11 99999-9999" oninput="atualizarPreview()">
                                     </div>
                                 </div>
                                 <div>
@@ -551,8 +375,7 @@
     </div>
 
     <!-- Modal encerramento -->
-    <div id="modal-encerrar" class="hidden fixed inset-0 z-50 flex items-center justify-center px-4"
-        style="background: rgba(0,0,0,0.5)">
+    <div id="modal-encerrar" class="hidden fixed inset-0 z-50 flex items-center justify-center px-4 modal-backdrop">
         <div
             class="bg-white dark:bg-darkCard rounded-3xl border border-gray-200 dark:border-gray-800 shadow-2xl p-8 max-w-sm w-full">
             <div class="flex items-center gap-3 mb-4">

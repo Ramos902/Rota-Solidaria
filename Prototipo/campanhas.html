@@ -19,8 +19,8 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: '#D50000', /* Vermelho de Alto Contraste */
-                        brandHover: '#9B0000',
+                        brand: '#B4232A', /* Vermelho de Alto Contraste */
+                        brandHover: '#8F1821',
                         darkBg: '#000000',
                         darkCard: '#121212'
                     }
@@ -29,105 +29,8 @@
         }
     </script>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-        /* ========================================================= */
-        /* AJUSTES DE ACESSIBILIDADE E ALTO CONTRASTE                */
-        /* ========================================================= */
-        html {
-            /* Fonte base controlada pelo JS para acessibilidade */
-            font-size: 18px;
-            transition: font-size 0.3s ease;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-        }
-
-        /* Alto Contraste EXCLUSIVO no Modo Claro Padrão */
-        html:not(.dark):not(.alto-contraste) .text-gray-400,
-        html:not(.dark):not(.alto-contraste) .text-gray-500,
-        html:not(.dark):not(.alto-contraste) .text-gray-600 {
-            color: #1a1a1a !important;
-            font-weight: 600 !important;
-        }
-
-        html:not(.dark):not(.alto-contraste) .border-gray-100,
-        html:not(.dark):not(.alto-contraste) .border-gray-200 {
-            border-color: #cccccc !important;
-        }
-
-        html:not(.dark):not(.alto-contraste) .bg-gray-50 {
-            background-color: #ffffff !important;
-        }
-
-        /* TEMA DE ALTO CONTRASTE DE ACESSIBILIDADE (Preto e Amarelo) */
-        html.alto-contraste body,
-        html.alto-contraste main,
-        html.alto-contraste header,
-        html.alto-contraste footer,
-        html.alto-contraste div {
-            background-color: #000000 !important;
-            color: #FFFFFF !important;
-            border-color: #FFFF00 !important;
-        }
-
-        html.alto-contraste h1,
-        html.alto-contraste h2,
-        html.alto-contraste h3,
-        html.alto-contraste h4,
-        html.alto-contraste p,
-        html.alto-contraste span,
-        html.alto-contraste i,
-        html.alto-contraste label {
-            color: #FFFFFF !important;
-        }
-
-        html.alto-contraste a,
-        html.alto-contraste button {
-            color: #FFFF00 !important;
-            border-color: #FFFF00 !important;
-        }
-
-        html.alto-contraste .bg-brand,
-        html.alto-contraste .bg-gray-100,
-        html.alto-contraste .bg-gray-200,
-        html.alto-contraste .bg-red-50,
-        html.alto-contraste .bg-white,
-        html.alto-contraste input,
-        html.alto-contraste select {
-            background-color: #000000 !important;
-            border: 2px solid #FFFF00 !important;
-            color: #FFFF00 !important;
-        }
-
-        html.alto-contraste .text-brand {
-            color: #FFFF00 !important;
-        }
-
-        /* ========================================================= */
-        /* UTILITÁRIOS GERAIS                                        */
-        /* ========================================================= */
-        * {
-            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
-        }
-
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        /* Menu Mobile Escondido */
-        #mobile-menu.hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/site.css">
 </head>
 
 <body class="bg-gray-50 text-gray-800 dark:bg-darkBg dark:text-gray-100 flex flex-col min-h-screen overflow-x-hidden">
@@ -237,8 +140,9 @@
     <main class="flex-grow w-full">
 
         <!-- Cabeçalho da Página -->
-        <div class="bg-brand text-white py-12 px-4 border-b border-brandHover">
+        <div class="page-hero bg-brand text-white py-12 px-4 border-b border-brandHover">
             <div class="max-w-7xl mx-auto text-center">
+                <span class="section-kicker">Agenda regional</span>
                 <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Campanhas na Região</h2>
                 <p class="text-red-100 font-medium max-w-2xl mx-auto">Verifique a lista completa de ações de coleta de
                     sangue programadas.</p>
@@ -264,7 +168,7 @@
                 <!-- Card: Em Andamento -->
                 <a href="https://docs.google.com/forms/d/1lQDk3Z6LGOOpNGOBf8EMA14UZgDtz1NvGA7a4fl529k/edit"
                     target="_blank"
-                    class="bg-white dark:bg-darkCard rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
+                    class="campaign-card bg-white dark:bg-darkCard rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
 
                     <div class="relative h-40 overflow-hidden">
                         <img src="./assets/doacaodesangue.jpeg" alt=""
@@ -273,7 +177,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 
                         <span
-                            class="absolute top-3 left-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide flex items-center gap-1">
+                            class="status-pill status-open absolute top-3 left-3 flex items-center gap-1">
                             <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse inline-block"></span>
                             Em Andamento
                         </span>
@@ -303,20 +207,20 @@
                         </div>
 
                         <span
-                            class="w-full block bg-brand hover:bg-brandHover text-white font-bold py-3 rounded-xl transition-colors text-center text-sm">
+                            class="button-primary w-full justify-center">
                             Inscrever-se
                         </span>
                     </div>
                 </a>
                 <!-- Card: Finalizada -->
                 <div
-                    class="bg-white dark:bg-darkCard rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex flex-col h-full opacity-75">
+                    class="campaign-card campaign-card-closed bg-white dark:bg-darkCard rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex flex-col h-full opacity-75">
                     <div class="relative h-40 overflow-hidden">
                         <img src="./assets/doacaodesangue.jpeg" alt=""
                             class="absolute inset-0 w-full h-full object-cover grayscale">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                         <span
-                            class="absolute top-3 left-3 bg-gray-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                            class="status-pill status-closed absolute top-3 left-3">
                             Finalizada
                         </span>
                     </div>

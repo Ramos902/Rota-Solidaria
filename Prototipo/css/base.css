@@ -1,4 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,600;6..72,700;6..72,800&display=swap');
+
+:root {
+    --brand: #8f2630;
+    --brand-hover: #6f1c25;
+    --brand-soft: #f4dddb;
+    --accent: #506653;
+    --accent-soft: #e8eee6;
+    --clay: #bd765d;
+    --ink: #24211d;
+    --ink-strong: #14120f;
+    --muted: #625d55;
+    --muted-soft: #8d867b;
+    --line: #d8d0c4;
+    --line-strong: #bdb2a2;
+    --surface: #fffdf8;
+    --surface-alt: #f4efe6;
+    --surface-deep: #ebe2d5;
+    --dark-bg: #12110f;
+    --dark-card: #1b1916;
+    --dark-line: #34302a;
+    --success: #3f6f58;
+    --success-soft: #edf5ef;
+    --danger: #8f2630;
+    --radius: 6px;
+    --shadow-rule: 0 1px 0 rgba(20, 18, 15, 0.08);
+    --shadow-lift: 0 18px 40px rgba(20, 18, 15, 0.08);
+}
 
 html {
     font-size: 18px;
@@ -6,20 +33,233 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 1px 1px, rgba(36, 33, 29, 0.08) 1px, transparent 0),
+        linear-gradient(90deg, rgba(143, 38, 48, 0.045) 1px, transparent 1px),
+        var(--surface-alt);
+    background-size: 18px 18px, 112px 112px, auto;
+    color: var(--ink);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 500;
+}
+
+html.dark body {
+    background:
+        radial-gradient(circle at 1px 1px, rgba(255, 253, 248, 0.06) 1px, transparent 0),
+        linear-gradient(90deg, rgba(255, 253, 248, 0.035) 1px, transparent 1px),
+        var(--dark-bg);
+    background-size: 18px 18px, 112px 112px, auto;
+    color: #f4efe6;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    letter-spacing: 0;
+}
+
+h1,
+h2 {
+    font-family: 'Newsreader', Georgia, serif;
+    letter-spacing: -0.01em;
+}
+
+a,
+button {
+    text-underline-offset: 4px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgba(143, 38, 48, 0.28);
+    outline-offset: 3px;
+}
+
+::selection {
+    background: var(--brand);
+    color: var(--surface);
+}
+
+.bg-brand {
+    background-color: var(--brand) !important;
+}
+
+.hover\:bg-brandHover:hover {
+    background-color: var(--brand-hover) !important;
+}
+
+.text-brand {
+    color: var(--brand) !important;
+}
+
+.border-brand {
+    border-color: var(--brand) !important;
+}
+
+.border-brandHover {
+    border-color: var(--brand-hover) !important;
+}
+
+.bg-white {
+    background-color: var(--surface) !important;
+}
+
+.bg-gray-50 {
+    background-color: rgba(255, 253, 248, 0.74) !important;
+}
+
+.bg-gray-100 {
+    background-color: #eee7dc !important;
+}
+
+.text-gray-900,
+.text-gray-800 {
+    color: var(--ink-strong) !important;
+}
+
+.text-gray-700 {
+    color: var(--ink) !important;
+}
+
+.border-gray-100,
+.border-gray-200,
+.border-gray-300 {
+    border-color: var(--line) !important;
+}
+
+.dark .dark\:bg-darkCard,
+.dark .dark\:bg-gray-800,
+.dark .dark\:bg-gray-800\/50 {
+    background-color: var(--dark-card) !important;
+}
+
+.dark .dark\:bg-darkBg,
+.dark .dark\:bg-darkPanel {
+    background-color: var(--dark-bg) !important;
+}
+
+.dark .dark\:border-gray-700,
+.dark .dark\:border-gray-800 {
+    border-color: var(--dark-line) !important;
+}
+
+.dark .dark\:text-white,
+.dark .text-gray-900,
+.dark .text-gray-800 {
+    color: #fffdf8 !important;
+}
+
+.dark .dark\:text-gray-300,
+.dark .dark\:text-gray-400 {
+    color: #c9c0b3 !important;
+}
+
+.rounded,
+.rounded-lg,
+.rounded-xl,
+.rounded-2xl,
+.rounded-3xl {
+    border-radius: var(--radius) !important;
+}
+
+.rounded-full {
+    border-radius: 999px !important;
+}
+
+.shadow-sm,
+.shadow-md,
+.shadow-lg,
+.shadow-xl,
+.shadow-2xl {
+    box-shadow: var(--shadow-rule) !important;
+}
+
+header {
+    background: rgba(255, 253, 248, 0.94) !important;
+    border-top: 0;
+    border-bottom: 1px solid var(--line) !important;
+    backdrop-filter: blur(12px);
+}
+
+.dark header {
+    background: rgba(18, 17, 15, 0.94) !important;
+}
+
+header img {
+    height: 3rem !important;
+}
+
+header nav a {
+    position: relative;
+    border-bottom-width: 0 !important;
+    color: var(--muted) !important;
+}
+
+header nav a:hover,
+header nav a.text-brand {
+    color: var(--ink-strong) !important;
+}
+
+.dark header nav a:hover,
+.dark header nav a.text-brand {
+    color: #fffdf8 !important;
+}
+
+header nav a.text-brand::after {
+    position: absolute;
+    right: 0;
+    bottom: -0.45rem;
+    left: 0;
+    height: 2px;
+    background: var(--brand);
+    content: "";
+}
+
+header .bg-brand {
+    border: 1px solid var(--brand-hover);
+    box-shadow: none !important;
+}
+
+input,
+select,
+textarea {
+    border-color: var(--line) !important;
+    border-radius: var(--radius) !important;
+    background: rgba(255, 253, 248, 0.9) !important;
+    color: var(--ink) !important;
+    box-shadow: inset 0 1px 0 rgba(20, 18, 15, 0.03) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--muted-soft) !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--brand) !important;
+    box-shadow: 0 0 0 3px rgba(143, 38, 48, 0.12) !important;
+}
+
+.dark input,
+.dark select,
+.dark textarea {
+    background: #201d19 !important;
+    color: #fffdf8 !important;
 }
 
 html:not(.dark):not(.alto-contraste) .text-gray-400,
 html:not(.dark):not(.alto-contraste) .text-gray-500,
 html:not(.dark):not(.alto-contraste) .text-gray-600 {
-    color: #1a1a1a !important;
+    color: var(--muted) !important;
     font-weight: 600 !important;
-}
-
-html:not(.dark):not(.alto-contraste) .border-gray-100,
-html:not(.dark):not(.alto-contraste) .border-gray-200 {
-    border-color: #cccccc !important;
 }
 
 html.alto-contraste body,
@@ -70,7 +310,7 @@ html.alto-contraste .text-brand {
 }
 
 * {
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
+    transition: background-color 0.22s ease, border-color 0.22s ease, color 0.18s ease, transform 0.18s ease;
 }
 
 .no-scrollbar::-webkit-scrollbar {

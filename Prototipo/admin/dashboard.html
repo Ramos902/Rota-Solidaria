@@ -15,8 +15,8 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: '#D50000',
-                        brandHover: '#9B0000',
+                        brand: '#B4232A',
+                        brandHover: '#8F1821',
                         darkBg: '#000000',
                         darkCard: '#121212',
                         darkPanel: '#0a0a0a'
@@ -26,89 +26,8 @@
         }
     </script>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-        html {
-            font-size: 18px;
-            transition: font-size 0.3s ease;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-        }
-
-        html:not(.dark):not(.alto-contraste) .text-gray-400,
-        html:not(.dark):not(.alto-contraste) .text-gray-500,
-        html:not(.dark):not(.alto-contraste) .text-gray-600 {
-            color: #1a1a1a !important;
-            font-weight: 600 !important;
-        }
-
-        html:not(.dark):not(.alto-contraste) .border-gray-100,
-        html:not(.dark):not(.alto-contraste) .border-gray-200 {
-            border-color: #cccccc !important;
-        }
-
-        html:not(.dark):not(.alto-contraste) .bg-gray-50 {
-            background-color: #f9fafb !important;
-        }
-
-        html.alto-contraste body,
-        html.alto-contraste main,
-        html.alto-contraste header,
-        html.alto-contraste footer,
-        html.alto-contraste div {
-            background-color: #000000 !important;
-            color: #FFFFFF !important;
-            border-color: #FFFF00 !important;
-        }
-
-        html.alto-contraste h1,
-        html.alto-contraste h2,
-        html.alto-contraste h3,
-        html.alto-contraste h4,
-        html.alto-contraste p,
-        html.alto-contraste span,
-        html.alto-contraste i,
-        html.alto-contraste label,
-        html.alto-contraste li,
-        html.alto-contraste th,
-        html.alto-contraste td {
-            color: #FFFFFF !important;
-        }
-
-        html.alto-contraste a,
-        html.alto-contraste button {
-            color: #FFFF00 !important;
-            border-color: #FFFF00 !important;
-        }
-
-        html.alto-contraste .bg-brand,
-        html.alto-contraste .bg-gray-100,
-        html.alto-contraste .bg-gray-200,
-        html.alto-contraste .bg-red-50,
-        html.alto-contraste .bg-white,
-        html.alto-contraste input,
-        html.alto-contraste select {
-            background-color: #000000 !important;
-            border: 2px solid #FFFF00 !important;
-            color: #FFFF00 !important;
-        }
-
-        html.alto-contraste .text-brand {
-            color: #FFFF00 !important;
-        }
-
-        * {
-            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
-        }
-
-        #mobile-menu.hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
 
 <body

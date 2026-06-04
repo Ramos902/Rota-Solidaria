@@ -19,8 +19,8 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: '#D50000', /* Vermelho de Alto Contraste */
-                        brandHover: '#9B0000',
+                        brand: '#B4232A', /* Vermelho de Alto Contraste */
+                        brandHover: '#8F1821',
                         darkBg: '#000000',
                         darkCard: '#121212'
                     }
@@ -29,105 +29,8 @@
         }
     </script>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-        /* ========================================================= */
-        /* AJUSTES DE ACESSIBILIDADE E ALTO CONTRASTE                */
-        /* ========================================================= */
-        html {
-            /* Fonte base controlada pelo JS para acessibilidade */
-            font-size: 18px;
-            transition: font-size 0.3s ease;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-        }
-
-        /* Alto Contraste EXCLUSIVO no Modo Claro Padrão */
-        html:not(.dark):not(.alto-contraste) .text-gray-400,
-        html:not(.dark):not(.alto-contraste) .text-gray-500,
-        html:not(.dark):not(.alto-contraste) .text-gray-600 {
-            color: #1a1a1a !important;
-            font-weight: 600 !important;
-        }
-
-        html:not(.dark):not(.alto-contraste) .border-gray-100,
-        html:not(.dark):not(.alto-contraste) .border-gray-200 {
-            border-color: #cccccc !important;
-        }
-
-        html:not(.dark):not(.alto-contraste) .bg-gray-50 {
-            background-color: #ffffff !important;
-        }
-
-        /* TEMA DE ALTO CONTRASTE DE ACESSIBILIDADE (Preto e Amarelo) */
-        html.alto-contraste body,
-        html.alto-contraste main,
-        html.alto-contraste header,
-        html.alto-contraste footer,
-        html.alto-contraste div {
-            background-color: #000000 !important;
-            color: #FFFFFF !important;
-            border-color: #FFFF00 !important;
-        }
-
-        html.alto-contraste h1,
-        html.alto-contraste h2,
-        html.alto-contraste h3,
-        html.alto-contraste h4,
-        html.alto-contraste p,
-        html.alto-contraste span,
-        html.alto-contraste i,
-        html.alto-contraste label {
-            color: #FFFFFF !important;
-        }
-
-        html.alto-contraste a,
-        html.alto-contraste button {
-            color: #FFFF00 !important;
-            border-color: #FFFF00 !important;
-        }
-
-        html.alto-contraste .bg-brand,
-        html.alto-contraste .bg-gray-100,
-        html.alto-contraste .bg-gray-200,
-        html.alto-contraste .bg-red-50,
-        html.alto-contraste .bg-white,
-        html.alto-contraste input,
-        html.alto-contraste select {
-            background-color: #000000 !important;
-            border: 2px solid #FFFF00 !important;
-            color: #FFFF00 !important;
-        }
-
-        html.alto-contraste .text-brand {
-            color: #FFFF00 !important;
-        }
-
-        /* ========================================================= */
-        /* UTILITÁRIOS GERAIS                                        */
-        /* ========================================================= */
-        * {
-            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease;
-        }
-
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        /* Menu Mobile Escondido */
-        #mobile-menu.hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/site.css">
 </head>
 
 <body class="bg-gray-50 text-gray-800 dark:bg-darkBg dark:text-gray-100 flex flex-col min-h-screen overflow-x-hidden">
@@ -236,66 +139,73 @@
     <main class="flex-grow relative">
 
         <!-- Banner Hero -->
-        <div class="bg-white dark:bg-darkCard border-b border-gray-200 dark:border-gray-800">
-            <div
-                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-6">
-                        Doe sangue, salve vidas perto de você.
-                    </h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 font-medium">
-                        Conectamos organizadores de campanhas a doadores voluntários. Descubra ações perto de sua casa,
-                        inscreva-se facilmente e ajude a abastecer os hemocentros de sua região.
+        <section class="home-hero">
+            <div class="home-hero-grid">
+                <div class="home-hero-copy">
+                    <span class="section-kicker">Angatuba e região</span>
+                    <h1>
+                        Doação de sangue local, com data e endereço claros.
+                    </h1>
+                    <p>
+                        Encontre campanhas confirmadas por UBS e organizadores da região, veja o local de coleta e faça
+                        sua inscrição sem depender de correntes ou cartazes perdidos.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="campanhas.html"
-                            class="bg-brand hover:bg-brandHover text-white px-8 py-4 rounded-xl font-bold transition-colors shadow-lg text-center flex items-center justify-center gap-2">
-                            <i data-lucide="search" class="w-5 h-5"></i> Campanhas em Andamento
+                    <div class="hero-actions">
+                        <a href="campanhas.html" class="button-primary">
+                            <i data-lucide="search" class="w-5 h-5"></i>
+                            Ver campanhas abertas
                         </a>
-                        <a href="educativo.html"
-                            class="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-white px-8 py-4 rounded-xl font-bold transition-colors text-center">
-                            Como Funciona?
+                        <a href="educativo.html" class="button-secondary">
+                            <i data-lucide="clipboard-check" class="w-5 h-5"></i>
+                            Antes de doar
                         </a>
                     </div>
                 </div>
-                <div class="hidden md:flex justify-center relative">
-                    <!-- Imagem Ilustrativa / Placeholder -->
-                    <div
-                        class="w-full max-w-md h-80 rounded-3xl border border-gray-300 dark:border-gray-700 relative overflow-hidden shadow-xl">
-                        <!-- Imagem de fundo ocupando toda a div -->
-                        <img src="./assets/doacaodesangue.jpeg" alt="Doação de sangue"
-                            class="absolute inset-0 w-full h-full object-cover">
 
-                        <!-- Overlay gradiente para dar profundidade e destacar o ícone -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-red-900/70 via-red-800/30 to-transparent">
-                        </div>
-
-                        <!-- Coração centralizado com fundo circular translúcido -->
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div
-                                class="bg-white/20 backdrop-blur-sm border border-white/30 rounded-full p-6 shadow-2xl">
-                                <i data-lucide="heart-pulse" class="w-16 h-16 text-white drop-shadow-lg"></i>
-                            </div>
+                <aside class="hero-panel" aria-label="Resumo da próxima campanha">
+                    <img src="./assets/doacaodesangue.jpeg" alt="Pessoa realizando doação de sangue">
+                    <div class="hero-panel-info">
+                        <span class="status-pill status-open">Inscrições abertas</span>
+                        <h2>Campanha do Dia Mundial do Doador</h2>
+                        <div class="hero-panel-meta">
+                            <span><i data-lucide="calendar" class="w-4 h-4"></i> Hoje, 07:00 às 17:00</span>
+                            <span><i data-lucide="map-pin" class="w-4 h-4"></i> Ginásio Municipal, Angatuba</span>
                         </div>
                     </div>
+                </aside>
+            </div>
+
+            <div class="service-strip" aria-label="Resumo do serviço">
+                <div>
+                    <strong>2</strong>
+                    <span>campanhas ativas</span>
+                </div>
+                <div>
+                    <strong>UBS</strong>
+                    <span>organização identificada</span>
+                </div>
+                <div>
+                    <strong>15 min</strong>
+                    <span>média da coleta</span>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Destaques -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="flex justify-between items-end mb-10">
+        <section class="home-campaigns max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="section-heading">
                 <div>
-                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Campanhas</h3>
-                    <p class="text-gray-600 dark:text-gray-400 mt-1">Próximas ações confirmadas!</p>
+                    <span class="section-kicker">Agenda de coleta</span>
+                    <h2>Próximas campanhas confirmadas</h2>
+                    <p>Informação direta para decidir rápido: quando, onde e quem organiza.</p>
                 </div>
-                <a href="campanhas.html" class="text-brand font-bold hover:underline hidden sm:block">Ver todas</a>
+                <a href="campanhas.html" class="section-link hidden sm:inline-flex">Ver todas</a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Card Campanha Home -->
                 <a href="https://docs.google.com/forms/d/1lQDk3Z6LGOOpNGOBf8EMA14UZgDtz1NvGA7a4fl529k/edit" target="_blank"
-                    class="bg-white dark:bg-darkCard rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
+                    class="campaign-card bg-white dark:bg-darkCard rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
 
                     <div class="relative h-40 overflow-hidden">
                         <img src="./assets/doacaodesangue.jpeg" alt=""
@@ -304,7 +214,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 
                         <span
-                            class="absolute top-3 left-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide flex items-center gap-1">
+                            class="status-pill status-open absolute top-3 left-3 flex items-center gap-1">
                             <span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse inline-block"></span>
                             Em Andamento
                         </span>
@@ -334,20 +244,20 @@
                         </div>
 
                         <span
-                            class="w-full block bg-brand hover:bg-brandHover text-white font-bold py-3 rounded-xl transition-colors text-center text-sm">
+                            class="button-primary w-full justify-center">
                             Inscrever-se
                         </span>
                     </div>
                 </a>
                 <!-- Card: Finalizada -->
                 <div
-                    class="bg-white dark:bg-darkCard rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex flex-col h-full opacity-75">
+                    class="campaign-card campaign-card-closed bg-white dark:bg-darkCard rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex flex-col h-full opacity-75">
                     <div class="relative h-40 overflow-hidden">
                         <img src="./assets/doacaodesangue.jpeg" alt=""
                             class="absolute inset-0 w-full h-full object-cover grayscale">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                         <span
-                            class="absolute top-3 left-3 bg-gray-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                            class="status-pill status-closed absolute top-3 left-3">
                             Finalizada
                         </span>
                     </div>
@@ -371,7 +281,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
     </main>
 
