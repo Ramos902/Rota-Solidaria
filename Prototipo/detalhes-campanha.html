@@ -140,7 +140,7 @@
                                 <div class="bg-white/20 p-3 rounded-xl backdrop-blur-sm"><i data-lucide="calendar-clock" class="w-6 h-6"></i></div>
                                 <div>
                                     <span class="block font-bold text-lg">Sábado, 11 de Maio</span>
-                                    <span class="text-red-100 text-sm font-medium">05:00 às 16:00</span>
+                                    <span class="text-red-100 text-sm font-medium">05:00h</span>
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
@@ -153,40 +153,41 @@
                         </div>
                     </div>
                 </div>
-                        <!-- Aviso Legal -->
-                        <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-xl border border-blue-200 dark:border-blue-800 mt-6 flex items-start gap-3">
-                            <i data-lucide="shield-check" class="w-6 h-6 flex-shrink-0 text-blue-600 dark:text-blue-400 mt-0.5"></i>
-                            <p class="text-sm font-medium text-blue-800 dark:text-blue-300 leading-relaxed">
-                                Ao confirmar, você concorda que seus dados serão enviados <strong>exclusivamente</strong> ao organizador responsável pela campanha (UBS Central Angatuba) para controle de vagas e contato de confirmação.
-                            </p>
-                        </div>
-
-                        <!-- Botões -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-
-                        <!-- Botão Inscrição -->
-                        <button type="submit" class="w-full bg-brand hover:bg-brandHover text-white font-bold py-4 rounded-xl transition-colors shadow-lg text-lg flex justify-center items-center gap-2">
-                        Fazer Inscrição
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        <!-- Corpo do Card -->
+                <div class="p-8 sm:p-10">
+ 
+                    <!-- Aviso Legal -->
+                    <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-xl border border-blue-200 dark:border-blue-800 flex items-start gap-3" role="note">
+                        <i data-lucide="shield-check" class="w-6 h-6 flex-shrink-0 text-blue-600 dark:text-blue-400 mt-0.5" aria-hidden="true"></i>
+                        <p class="text-sm font-medium text-blue-800 dark:text-blue-300 leading-relaxed">
+                            Ao confirmar, você concorda que seus dados serão enviados <strong>exclusivamente</strong> ao organizador responsável pela campanha para controle de vagas e contato de confirmação.
+                        </p>
+                    </div>
+ 
+                    <!-- Botões de Ação -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                        <button type="button"
+                            class="w-full bg-brand hover:bg-brandHover text-white font-bold py-4 rounded-xl transition-colors shadow-lg text-lg flex justify-center items-center gap-2">
+                            Fazer Inscrição
+                            <i data-lucide="arrow-right" class="w-5 h-5" aria-hidden="true"></i>
                         </button>
-
-                        <!-- Botão Cadastro -->
-                        <a href="cadastro.html" class="w-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-white font-bold py-4 rounded-xl transition-colors shadow-lg text-lg flex justify-center items-center gap-2">
-                                Não tenho cadastro
-                            <i data-lucide="user-plus" class="w-5 h-5"></i>
+                        <a href="login.html"
+                            class="w-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 text-gray-800 dark:text-white font-bold py-4 rounded-xl transition-colors shadow-lg text-lg flex justify-center items-center gap-2">
+                            Não tenho cadastro
+                            <i data-lucide="user-plus" class="w-5 h-5" aria-hidden="true"></i>
                         </a>
-                        </div>
-                    </form>
+                    </div>
+ 
                 </div>
             </div>
-
-            <!-- Dúvidas Rápidas -->
+ 
+            <!-- Dúvidas -->
             <div class="mt-8 text-center">
                 <p class="text-gray-600 dark:text-gray-400 font-medium">
                     Tem dúvidas se você pode doar? <a href="educativo.html" class="text-brand font-bold hover:underline">Confira os requisitos básicos.</a>
                 </p>
             </div>
-
+ 
         </div>
     </main>
 
@@ -208,7 +209,7 @@
                 <!-- Acesso Administrativo -->
                 <div>
                     <a href="admin/login.html" class="text-sm font-bold text-gray-500 hover:text-brand transition-colors flex items-center gap-2">
-                        <i data-lucide="lock" class="w-4 h-4"></i> Acesso Restrito (Organizadores)
+                        Detalhes da Campanha
                     </a>
                 </div>
             </div>
