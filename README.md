@@ -55,4 +55,4 @@ Para melhor otimização do desenvolvimento do projeto, o protótipo abaixo foi 
 
 | <img src="https://github.com/Ramos902.png" width="80px" style="border-radius:50%"/> | <img src="https://github.com/andrwza.png" width="80px" style="border-radius:50%"/> | <img src="https://github.com/Buenno0.png" width="80px" style="border-radius:50%"/> | <img src="https://github.com/FernandoNino38.png" width="80px" style="border-radius:50%"/> 
 |---|---|
-| [Ramos](https://github.com/Ramos902) | [Andreza](https://github.com/andrwza) |
+| [Ramos](https://github.com/Ramos902) | [Andreza](https://github.com/andrwza) | [Mateus](https://github.com/Buenno0) | [Fernando](https://github.com/FernandoNino38)
