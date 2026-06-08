@@ -9,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Configuração do Tailwind para Cores e Dark Mode -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -18,8 +19,7 @@
                         brand: '#B4232A',
                         brandHover: '#8F1821',
                         darkBg: '#000000',
-                        darkCard: '#121212',
-                        darkPanel: '#0a0a0a'
+                        darkCard: '#121212'
                     }
                 }
             }
@@ -173,8 +173,6 @@
                 </div>
             </div>
 
-            </div>
-
             <!-- Tabela de Campanhas -->
             <div
                 class="bg-white dark:bg-darkCard rounded-3xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden">
@@ -187,22 +185,6 @@
 
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse min-w-[600px]">
-                        <thead>
-                            <tr class="bg-gray-50 dark:bg-gray-900/50">
-                                <th
-                                    class="p-5 text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide border-b border-gray-200 dark:border-gray-800">
-                                    Campanha</th>
-                                <th
-                                    class="p-5 text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide border-b border-gray-200 dark:border-gray-800">
-                                    Data</th>
-                                <th
-                                    class="p-5 text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide border-b border-gray-200 dark:border-gray-800">
-                                    Status</th>
-                                <th
-                                    class="p-5 text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide border-b border-gray-200 dark:border-gray-800 text-right">
-                                    Ações</th>
-                            </tr>
-                        </thead>
                         <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
 
                             <!-- Campanha em andamento -->
@@ -292,43 +274,47 @@
         </div>
     </footer>
 
+    <!-- Scripts de Interação -->
     <script>
+        // Inicializar ícones
         lucide.createIcons();
 
+        // ==========================================
+        // LÓGICA DE TEMA E ACESSIBILIDADE 
+        // ==========================================
         const htmlElement = document.documentElement;
-
+        
         function toggleTheme() {
             htmlElement.classList.toggle('dark');
             const isDark = htmlElement.classList.contains('dark');
             const iconName = isDark ? 'sun' : 'moon';
-            document.querySelectorAll('#theme-icon, #theme-icon-mobile').forEach(icon => icon.setAttribute('data-lucide', iconName));
+            
+            const themeIcons = document.querySelectorAll('#theme-icon');
+            themeIcons.forEach(icon => icon.setAttribute('data-lucide', iconName));
             lucide.createIcons();
+            
             localStorage.setItem('temaAmigosSangue', isDark ? 'dark' : 'light');
         }
 
         const themeBtn = document.getElementById('theme-toggle');
-        const themeBtnMobile = document.getElementById('theme-toggle-mobile');
-        if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
-        if (themeBtnMobile) themeBtnMobile.addEventListener('click', toggleTheme);
+        if(themeBtn) themeBtn.addEventListener('click', toggleTheme);
 
         const btnAcessibilidade = document.getElementById('btn-acessibilidade');
         const menuAcessibilidade = document.getElementById('menu-acessibilidade');
-
-        if (btnAcessibilidade) {
-            btnAcessibilidade.addEventListener('click', (e) => {
-                e.stopPropagation();
-                menuAcessibilidade.classList.toggle('hidden');
-            });
-        }
+        
+        btnAcessibilidade.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuAcessibilidade.classList.toggle('hidden');
+        });
 
         document.addEventListener('click', (e) => {
-            if (btnAcessibilidade && !btnAcessibilidade.contains(e.target) && !menuAcessibilidade.contains(e.target)) {
+            if (!btnAcessibilidade.contains(e.target) && !menuAcessibilidade.contains(e.target)) {
                 menuAcessibilidade.classList.add('hidden');
             }
         });
 
         let tamanhoFonteBase = parseInt(localStorage.getItem('tamanhoFonteAmigosSangue')) || 18;
-
+        
         function aplicarFonte() {
             htmlElement.style.fontSize = tamanhoFonteBase + 'px';
             localStorage.setItem('tamanhoFonteAmigosSangue', tamanhoFonteBase);
@@ -336,8 +322,8 @@
 
         function alterarFonte(valor) {
             tamanhoFonteBase += valor;
-            if (tamanhoFonteBase < 14) tamanhoFonteBase = 14;
-            if (tamanhoFonteBase > 26) tamanhoFonteBase = 26;
+            if(tamanhoFonteBase < 14) tamanhoFonteBase = 14; 
+            if(tamanhoFonteBase > 26) tamanhoFonteBase = 26; 
             aplicarFonte();
         }
 
@@ -350,30 +336,25 @@
             htmlElement.classList.toggle('alto-contraste');
             const isAltoContraste = htmlElement.classList.contains('alto-contraste');
             localStorage.setItem('altoContrasteAmigosSangue', isAltoContraste);
-            if (menuAcessibilidade) menuAcessibilidade.classList.add('hidden');
+            menuAcessibilidade.classList.add('hidden'); 
         }
 
         function carregarPreferencias() {
-            aplicarFonte();
-            if (localStorage.getItem('altoContrasteAmigosSangue') === 'true') {
+            aplicarFonte(); 
+            
+            if(localStorage.getItem('altoContrasteAmigosSangue') === 'true') {
                 htmlElement.classList.add('alto-contraste');
             }
-            if (localStorage.getItem('temaAmigosSangue') === 'dark') {
+            
+            if(localStorage.getItem('temaAmigosSangue') === 'dark') {
                 htmlElement.classList.add('dark');
-                document.querySelectorAll('#theme-icon, #theme-icon-mobile').forEach(icon => icon.setAttribute('data-lucide', 'sun'));
+                const themeIcons = document.querySelectorAll('#theme-icon');
+                themeIcons.forEach(icon => icon.setAttribute('data-lucide', 'sun'));
                 lucide.createIcons();
             }
         }
-
-        carregarPreferencias();
-
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileBtn) {
-            mobileBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
+        
+        carregarPreferencias(); 
     </script>
     <script src="../vlibras/vlibras.js"></script>
 </body>
