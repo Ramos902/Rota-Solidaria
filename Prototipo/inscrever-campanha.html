@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Amigos do Sangue - Inscrição em Campanha</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#B4232A', /* Vermelho de Alto Contraste */
+                        brandHover: '#8F1821',
+                        darkBg: '#000000',
+                        darkCard: '#121212'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/site.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800 dark:bg-darkPanel dark:text-gray-100 flex flex-col min-h-screen overflow-x-hidden">
+
+    <!-- CABEÇALHO -->
+    <header class="bg-white dark:bg-darkCard border-b border-gray-200 dark:border-gray-800 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3 cursor-pointer">
+                    <img src="./assets/logo.png" alt="Amigos do Sangue" class="h-10 dark:hidden">
+                    <img src="./assets/logo.png" alt="Amigos do Sangue" class="h-10 hidden dark:block">
+                </a>
+
+                <!-- Navegação Desktop -->
+                <nav class="hidden md:flex items-center gap-8 ml-8 mr-auto">
+                    <a href="dashboard.html"
+                        class="font-bold text-brand border-b-2 border-brand py-2 transition-colors">Painel</a>
+                </nav>
+
+                <!-- Ações -->
+                <div class="flex items-center gap-2 sm:gap-4">
+
+                    <!-- Acessibilidade -->
+                    <div class="relative hidden sm:block">
+                        <button id="btn-acessibilidade"
+                            class="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                            aria-label="Menu de Acessibilidade">
+                            <i data-lucide="accessibility" class="w-5 h-5"></i>
+                        </button>
+
+                        <div id="menu-acessibilidade"
+                            class="hidden absolute right-0 mt-2 w-56 bg-white dark:bg-darkCard border border-gray-200 dark:border-gray-800 rounded-xl shadow-lg p-3 z-50">
+                            <div class="mb-3">
+                                <span class="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Tamanho
+                                    do Texto</span>
+                                <div class="flex justify-between gap-2">
+                                    <button onclick="alterarFonte(-2)"
+                                        class="flex-1 p-2 bg-gray-100 dark:bg-gray-800 rounded hover:bg-gray-200 dark:hover:bg-gray-700 font-bold text-sm text-gray-800 dark:text-white">A-</button>
+                                    <button onclick="resetarFonte()"
+                                        class="flex-1 p-2 bg-gray-100 dark:bg-gray-800 rounded hover:bg-gray-200 dark:hover:bg-gray-700 font-bold text-sm text-gray-800 dark:text-white">A</button>
+                                    <button onclick="alterarFonte(2)"
+                                        class="flex-1 p-2 bg-gray-100 dark:bg-gray-800 rounded hover:bg-gray-200 dark:hover:bg-gray-700 font-bold text-sm text-gray-800 dark:text-white">A+</button>
+                                </div>
+                            </div>
+                            <hr class="border-gray-200 dark:border-gray-800 mb-3">
+                            <button onclick="toggleAltoContraste()"
+                                class="w-full flex items-center gap-2 p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded font-semibold text-sm text-gray-700 dark:text-gray-300 transition-colors">
+                                <i data-lucide="eye" class="w-4 h-4"></i> Alto Contraste
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Modo Escuro -->
+                    <button id="theme-toggle"
+                        class="p-2.5 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors hidden sm:block"
+                        aria-label="Alternar Tema">
+                        <i id="theme-icon" data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+
+                    <div class="hidden sm:block h-8 w-px bg-gray-200 dark:bg-gray-700 mx-2"></div>
+
+                    <!-- Perfil -->
+                    <div class="flex items-center gap-3">
+                        <div class="hidden md:block text-right">
+                            <p class="text-sm font-bold text-gray-900 dark:text-white leading-none">Nome Completo</p>
+                            <p class="text-xs text-gray-500 font-medium mt-1">Cidade</p>
+                        </div>
+                        <div
+                            class="w-10 h-10 bg-brand text-white rounded-full flex items-center justify-center font-bold border-2 border-red-100 dark:border-red-900 shadow-sm">
+                            NC
+                        </div>
+                    </div>
+
+                    <!-- Sair -->
+                    <a href="login.html"
+                        class="ml-2 p-2 text-gray-500 hover:text-brand transition-colors hidden md:block"
+                        title="Sair do Sistema">
+                        <i data-lucide="log-out" class="w-5 h-5"></i>
+                    </a>
+
+                    <!-- Menu Mobile -->
+                    <button id="mobile-menu-btn"
+                        class="md:hidden text-gray-600 dark:text-gray-300 hover:text-brand p-2 focus:outline-none ml-2">
+                        <i data-lucide="menu" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="flex-grow w-full py-8 sm:py-12">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Breadcrumb + título -->
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+                        <a href="dashboard.html" class="hover:text-brand transition-colors">Painel</a>
+                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                        <a href="campanhas.html" class="hover:text-brand transition-colors">Campanhas</a>
+                        <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                        <span class="text-gray-800 dark:text-gray-200 font-semibold">Inscrição</span>
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white">Inscrição em Campanha</h2>
+                    <p class="text-gray-600 dark:text-gray-400 font-medium mt-1">Confirme seus dados e realize sua inscrição.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                <!-- FORMULÁRIO -->
+                <div class="lg:col-span-2 space-y-6">
+
+                    <!-- Dados pessoais (pré-preenchidos) -->
+                    <div class="bg-white dark:bg-darkCard rounded-3xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 sm:p-8">
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1 flex items-center gap-2">
+                            <i data-lucide="user" class="w-5 h-5 text-brand"></i> Seus Dados
+                        </h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 font-medium">Verifique se as informações estão corretas antes de confirmar.</p>
+
+                        <div class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5">Nome Completo</label>
+                                    <input type="text" class="field-input" value="Nome Completo" readonly
+                                        style="opacity:0.7; cursor:not-allowed;">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5">Tipo Sanguíneo</label>
+                                    <input type="text" class="field-input" value="O+" readonly
+                                        style="opacity:0.7; cursor:not-allowed;">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5">CPF</label>
+                                    <input type="text" class="field-input" value="•••.•••.•••-••" readonly
+                                        style="opacity:0.7; cursor:not-allowed;">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5">Telefone</label>
+                                    <input type="text" class="field-input" value="(XX) XXXX-XXXXX" readonly
+                                        style="opacity:0.7; cursor:not-allowed;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-xs text-gray-400 dark:text-gray-500 mt-4 font-medium flex items-center gap-1.5">
+                            <i data-lucide="info" class="w-3.5 h-3.5"></i>
+                            Para alterar seus dados, acesse as <a href="perfil.html" class="text-brand hover:underline font-bold">configurações do perfil</a>.
+                        </p>
+                    </div>
+
+                    <!-- Observações -->
+                    <div class="bg-white dark:bg-darkCard rounded-3xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 sm:p-8">
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1 flex items-center gap-2">
+                            <i data-lucide="message-square" class="w-5 h-5 text-brand"></i> Observações
+                        </h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 font-medium">Alguma informação relevante para os organizadores?</p>
+
+                        <textarea id="campo-observacoes" rows="3" class="field-input resize-none"
+                            placeholder="Ex: sou doador regular, tenho restrição a algum procedimento, preciso de acompanhante..."></textarea>
+                        <p class="text-xs text-gray-400 dark:text-gray-500 mt-1.5 font-medium">Máximo 300 caracteres.</p>
+                    </div>
+
+                    <!-- Termos -->
+                    <div class="bg-white dark:bg-darkCard rounded-3xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 sm:p-8">
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-brand"></i> Confirmações
+                        </h3>
+
+                        <div class="space-y-4">
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <input id="check-apto" type="checkbox" class="mt-0.5 w-4 h-4 accent-brand flex-shrink-0 cursor-pointer">
+                                <span class="text-sm font-semibold text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+                                    Estou ciente dos <a href="#" class="text-brand hover:underline">requisitos para doação de sangue</a> e me considero apto(a) no dia da campanha.
+                                </span>
+                            </label>
+                            <label class="flex items-start gap-3 cursor-pointer group">
+                                <input id="check-comparecer" type="checkbox" class="mt-0.5 w-4 h-4 accent-brand flex-shrink-0 cursor-pointer">
+                                <span class="text-sm font-semibold text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+                                    Comprometo-me a comparecer na data e local indicados, ou avisar caso não possa.
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SIDEBAR -->
+                <div class="lg:col-span-1 space-y-6">
+
+                    <!-- Resumo da campanha -->
+                    <div class="bg-white dark:bg-darkCard rounded-3xl border border-gray-200 dark:border-gray-800 shadow-sm p-6">
+                        <h3 class="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-4">Campanha</h3>
+
+                        <div class="space-y-3">
+                            <p class="text-base font-extrabold text-gray-900 dark:text-white leading-tight">Campanha Solidária de Inverno</p>
+
+                            <div class="space-y-2 pt-1">
+                                <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 font-semibold">
+                                    <i data-lucide="calendar" class="w-4 h-4 text-brand flex-shrink-0"></i>
+                                    <span>15 de junho de 2026</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 font-semibold">
+                                    <i data-lucide="clock" class="w-4 h-4 text-brand flex-shrink-0"></i>
+                                    <span>08:00h</span>
+                                </div>
+                                <div class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400 font-semibold">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-brand flex-shrink-0 mt-0.5"></i>
+                                    <span>Colsan – Posto de Coleta Sorocaba</span>
+                                </div>
+                            </div>
+
+                            <div class="pt-2 border-t border-gray-100 dark:border-gray-800">
+                                <span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 py-1.5 px-3 rounded-full font-bold text-xs border border-green-200 dark:border-green-800 flex items-center w-max gap-1">
+                                    <div class="w-2 h-2 rounded-full bg-green-500"></div> Inscrições abertas
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vagas -->
+                    <div class="bg-white dark:bg-darkCard rounded-3xl border border-gray-200 dark:border-gray-800 shadow-sm p-6">
+                        <h3 class="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-4">Vagas</h3>
+                        <div class="flex items-end gap-2 mb-3">
+                            <span class="text-3xl font-extrabold text-gray-900 dark:text-white">18</span>
+                            <span class="text-sm text-gray-500 dark:text-gray-400 font-semibold pb-1">de 40 preenchidas</span>
+                        </div>
+                        <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2 overflow-hidden">
+                            <div class="bg-brand h-2 rounded-full" style="width: 36%"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 dark:text-gray-500 mt-2 font-medium">22 vagas disponíveis</p>
+                    </div>
+
+                    <!-- Ações -->
+                    <div class="bg-white dark:bg-darkCard rounded-3xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 space-y-3">
+                        <h3 class="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-4">Ações</h3>
+
+                        <button onclick="confirmarInscricao()"
+                            class="w-full bg-brand hover:bg-brandHover text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-md">
+                            <i data-lucide="check" class="w-4 h-4"></i> Confirmar Inscrição
+                        </button>
+
+                        <a href="dashboard.html"
+                            class="w-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-colors border border-gray-200 dark:border-gray-700 text-sm">
+                            <i data-lucide="arrow-left" class="w-4 h-4"></i> Voltar
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- TELA DE SUCESSO (oculta inicialmente) -->
+    <div id="tela-sucesso" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4">
+        <div class="bg-white dark:bg-darkCard rounded-3xl border border-gray-200 dark:border-gray-800 shadow-2xl p-8 sm:p-10 max-w-md w-full text-center">
+            <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-5">
+                <i data-lucide="check-circle-2" class="w-8 h-8 text-green-600 dark:text-green-400"></i>
+            </div>
+            <h3 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-2">Inscrição Confirmada!</h3>
+            <p class="text-gray-600 dark:text-gray-400 font-medium mb-1">Você está inscrito(a) na</p>
+            <p class="font-extrabold text-gray-900 dark:text-white mb-5">Campanha Solidária de Inverno</p>
+
+            <div class="bg-gray-50 dark:bg-gray-900/50 rounded-2xl p-4 mb-6 text-left space-y-2">
+                <div class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
+                    <i data-lucide="calendar" class="w-4 h-4 text-brand"></i> 15 de junho de 2026
+                </div>
+                <div class="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-brand"></i> Colsan – Posto de Coleta Sorocaba
+                </div>
+            </div>
+
+            <p class="text-xs text-gray-400 dark:text-gray-500 font-medium mb-6">Uma confirmação foi enviada para o seu e-mail cadastrado.</p>
+
+            <a href="dashboard.html"
+                class="w-full bg-brand hover:bg-brandHover text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-md">
+                <i data-lucide="layout-dashboard" class="w-4 h-4"></i> Ir ao Painel
+            </a>
+        </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-white dark:bg-darkCard border-t border-gray-200 dark:border-gray-800 mt-auto relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-2 opacity-80">
+                    <i data-lucide="droplet" class="w-4 h-4 text-brand"></i>
+                    <span class="font-bold text-sm text-gray-900 dark:text-white">Rota Solidária</span>
+                </div>
+                <div class="text-xs font-medium text-gray-500 text-center">Projeto de Extensão - IFSP</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div id="toast"
+        class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-sm py-3.5 px-6 rounded-2xl shadow-2xl flex items-center gap-2 whitespace-nowrap">
+        <i data-lucide="alert-circle" class="w-4 h-4 text-yellow-400 dark:text-yellow-600"></i>
+        <span id="toast-msg">Preencha os campos obrigatórios.</span>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Gerar opções de horário baseadas na campanha (08:00–17:00)
+        const horarios = [
+            { id: 'manha', label: 'Manhã', sub: '08:00 – 12:00', icon: 'sunrise' },
+            { id: 'tarde', label: 'Tarde', sub: '12:00 – 17:00', icon: 'sun' },
+            { id: 'qualquer', label: 'Qualquer', sub: 'Sem preferência', icon: 'clock' },
+        ];
+
+        let horarioSelecionado = null;
+
+        const container = document.getElementById('horarios-container');
+        horarios.forEach(h => {
+            const div = document.createElement('div');
+            div.className = 'radio-tab';
+            div.innerHTML = `
+                <input type="radio" name="horario" id="hr-${h.id}" value="${h.id}">
+                <label for="hr-${h.id}" class="flex-col items-start gap-1 w-full">
+                    <span class="font-extrabold text-sm">${h.label}</span>
+                    <span class="text-xs font-semibold opacity-70">${h.sub}</span>
+                </label>
+            `;
+            div.querySelector('input').addEventListener('change', () => { horarioSelecionado = h.id; });
+            container.appendChild(div);
+        });
+
+        lucide.createIcons();
+
+        function confirmarInscricao() {
+            const checkApto = document.getElementById('check-apto').checked;
+            const checkComparecer = document.getElementById('check-comparecer').checked;
+
+            if (!horarioSelecionado) {
+                mostrarToast('Selecione um horário de preferência.');
+                return;
+            }
+            if (!checkApto || !checkComparecer) {
+                mostrarToast('Confirme as declarações obrigatórias.');
+                return;
+            }
+
+            // Mostrar tela de sucesso
+            const tela = document.getElementById('tela-sucesso');
+            tela.classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function mostrarToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').textContent = msg;
+            toast.classList.remove('hidden');
+            toast.classList.add('show');
+            lucide.createIcons();
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.classList.add('hidden'), 300);
+            }, 3500);
+        }
+
+        // Tema e acessibilidade
+        const htmlElement = document.documentElement;
+
+        function toggleTheme() {
+            htmlElement.classList.toggle('dark');
+            const isDark = htmlElement.classList.contains('dark');
+            document.querySelectorAll('#theme-icon, #theme-icon-mobile').forEach(i => i.setAttribute('data-lucide', isDark ? 'sun' : 'moon'));
+            lucide.createIcons();
+            localStorage.setItem('temaAmigosSangue', isDark ? 'dark' : 'light');
+        }
+
+        document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+        document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggleTheme);
+
+        const btnAcess = document.getElementById('btn-acessibilidade');
+        const menuAcess = document.getElementById('menu-acessibilidade');
+        btnAcess?.addEventListener('click', (e) => { e.stopPropagation(); menuAcess.classList.toggle('hidden'); });
+        document.addEventListener('click', (e) => {
+            if (btnAcess && !btnAcess.contains(e.target) && !menuAcess.contains(e.target)) menuAcess.classList.add('hidden');
+        });
+
+        let tamanhoFonteBase = parseInt(localStorage.getItem('tamanhoFonteAmigosSangue')) || 16;
+        function aplicarFonte() { htmlElement.style.fontSize = tamanhoFonteBase + 'px'; localStorage.setItem('tamanhoFonteAmigosSangue', tamanhoFonteBase); }
+        function alterarFonte(v) { tamanhoFonteBase = Math.min(26, Math.max(14, tamanhoFonteBase + v)); aplicarFonte(); }
+        function resetarFonte() { tamanhoFonteBase = 16; aplicarFonte(); }
+        function toggleAltoContraste() {
+            htmlElement.classList.toggle('alto-contraste');
+            localStorage.setItem('altoContrasteAmigosSangue', htmlElement.classList.contains('alto-contraste'));
+            menuAcess?.classList.add('hidden');
+        }
+
+        function carregarPreferencias() {
+            aplicarFonte();
+            if (localStorage.getItem('altoContrasteAmigosSangue') === 'true') htmlElement.classList.add('alto-contraste');
+            if (localStorage.getItem('temaAmigosSangue') === 'dark') {
+                htmlElement.classList.add('dark');
+                document.querySelectorAll('#theme-icon, #theme-icon-mobile').forEach(i => i.setAttribute('data-lucide', 'sun'));
+                lucide.createIcons();
+            }
+        }
+        carregarPreferencias();
+
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+    <script src="vlibras/vlibras.js"></script>
+</body>
+
+</html>

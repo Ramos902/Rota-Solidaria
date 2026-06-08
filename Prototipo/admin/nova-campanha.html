@@ -188,17 +188,6 @@
                                     placeholder="Ex: Mutirão Solidário de Inverno">
                             </div>
 
-                            <!-- Organizador (readonly) -->
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5">
-                                    Organizador Responsável
-                                </label>
-                                <input type="text" value="UBS Central Angatuba" disabled
-                                    class="field-input opacity-60 cursor-not-allowed">
-                                <p class="text-xs text-gray-400 dark:text-gray-500 mt-1.5 font-medium">Preenchido
-                                    automaticamente com os dados da sua instituição.</p>
-                            </div>
-
                             <!-- Data e horário -->
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                 <div>
@@ -244,81 +233,7 @@
                         </div>
                     </div>
 
-                    <!-- Botão de inscrição -->
-                    <div
-                        class="bg-white dark:bg-darkCard rounded-3xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 sm:p-8">
-                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
-                            <i data-lucide="mouse-pointer-click" class="w-5 h-5 text-brand"></i> Botão de Inscrição
-                        </h3>
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">Escolha como os doadores vão se
-                            inscrever na campanha.</p>
-
-                        <!-- Tipo -->
-                        <div class="flex flex-col sm:flex-row gap-3 mb-6">
-                            <div class="radio-tab flex-1">
-                                <input type="radio" id="tipo-link" name="tipo-inscricao" value="link" checked
-                                    onchange="atualizarTipo()">
-                                <label for="tipo-link">
-                                    <i data-lucide="link" class="w-4 h-4"></i> Link / Formulário externo
-                                </label>
-                            </div>
-                            <div class="radio-tab flex-1">
-                                <input type="radio" id="tipo-whatsapp" name="tipo-inscricao" value="whatsapp"
-                                    onchange="atualizarTipo()">
-                                <label for="tipo-whatsapp">
-                                    <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Campo link -->
-                        <div id="campo-link-wrapper">
-                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5">URL do
-                                formulário</label>
-                            <input id="campo-link" type="url" class="field-input"
-                                placeholder="https://forms.google.com/..." oninput="atualizarPreview()">
-                            <p class="text-xs text-gray-400 dark:text-gray-500 mt-1.5 font-medium">O doador será
-                                redirecionado para esse endereço ao clicar no botão.</p>
-                        </div>
-
-                        <!-- Campo WhatsApp -->
-                        <div id="campo-whatsapp-wrapper" class="hidden">
-                            <div class="space-y-4">
-                                <div>
-                                    <label
-                                        class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5">Número
-                                        do WhatsApp</label>
-                                    <div class="flex gap-2">
-                                        <span
-                                            class="field-input w-auto px-3 flex items-center text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 border-r-0 rounded-r-none text-sm font-bold whitespace-nowrap">+55</span>
-                                        <input id="campo-whatsapp" type="tel" class="field-input rounded-l-none no-left-border"
-                                            placeholder="11 99999-9999" oninput="atualizarPreview()">
-                                    </div>
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5">Mensagem
-                                        pré-definida <span class="text-gray-400 font-medium">(opcional)</span></label>
-                                    <textarea id="campo-mensagem-wpp" rows="2" class="field-input resize-none"
-                                        placeholder="Olá! Gostaria de me inscrever na campanha de doação."
-                                        oninput="atualizarPreview()"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-blue-50 dark:bg-blue-900/10 rounded-2xl border border-blue-100 dark:border-blue-900/30 p-5 mt-6">
-                            <div class="flex items-start gap-3">
-                                <i data-lucide="info" class="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0"></i>
-                                <p class="text-xs text-blue-700 dark:text-blue-300 font-medium leading-relaxed">O link
-                                    ou WhatsApp configurado aqui aparecerá no botão de inscrição da página pública da
-                                    campanha.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
+                    
                 <!-- SIDEBAR -->
                 <div class="lg:col-span-1 space-y-6">
 
