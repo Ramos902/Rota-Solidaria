@@ -52,10 +52,9 @@ As interações são gerenciadas inteiramente por JavaScript vanilla. O sistema 
 
 [RESUMO]
 
----
 ## Autores
 
 | | | | |
 |---|---|---|---|
-| <img src="https://github.com/Ramos902.png" width="80px" style="border-radius:50%"/> | <img src="https://github.com/andrwza.png" width="80px" style="border-radius:50%"/> | <img src="https://github.com/Buenno0.png" width="80px" style="border-radius:50%"/> | <img src="https://github.com/FernandoNino38.png" width="80px" style="border-radius:50%"/> |
-| [Ramos](https://github.com/Ramos902) | [Andreza](https://github.com/andrwza) | [Mateus](https://github.com/Buenno0) | [Fernando](https://github.com/FernandoNino38) |
+| <img src="https://github.com/andrwza.png" width="80px" style="border-radius:50%"/> | <img src="https://github.com/Buenno0.png" width="80px" style="border-radius:50%"/> | <img src="https://github.com/FernandoNino38.png" width="80px" style="border-radius:50%"/> | <img src="https://github.com/Ramos902.png" width="80px" style="border-radius:50%"/> |
+| [Andreza](https://github.com/andrwza) | [Mateus](https://github.com/Buenno0) | [Fernando](https://github.com/FernandoNino38) | [Ramos](https://github.com/Ramos902) |
