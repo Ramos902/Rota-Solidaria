@@ -451,3 +451,31 @@ html:not(.dark):not(.alto-contraste) .bg-gray-50 {
         flex-direction: column;
     }
 }
+
+.hero-panel {
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            100deg,
+            rgba(143, 38, 48, 0.10) 0%,
+            rgba(143, 38, 48, 0.20) 60%,
+            rgba(143, 38, 48, 0.20) 56%
+        );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-heart {
+    width: 120px;
+    height: 120px;
+    color: rgba(255, 255, 255, 0.416);
+    stroke-width: 1.5;
+}
