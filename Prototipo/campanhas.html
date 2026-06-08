@@ -4,9 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Amigos do Sangue - Angatuba e Região</title>
+    <title>Amigos do Sangue - Campanhas Ativas</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Ícones Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <!-- Configuração do Tailwind para Cores e Dark Mode -->
     <script>
         tailwind.config = {
@@ -37,16 +42,17 @@
 
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center gap-3 cursor-pointer">
-                    <img src="./assets/logo.png" alt="Amigos do Sangue" class="h-10 dark:hidden">
-                    <img src="./assets/logo.png" alt="Amigos do Sangue" class="h-10 hidden dark:block">
+                    <img src="./assets/logo-lightmode.png" alt="Amigos do Sangue" class="h-10 dark:hidden">
+                    <img src="./assets/logo-darkmode.png" alt="Amigos do Sangue" class="h-10 hidden dark:block">
                 </a>
 
                 <!-- Navegação Desktop -->
                 <nav class="hidden md:flex items-center gap-8">
+                    <!-- Início agora é inativo, Campanhas é o link ativo -->
                     <a href="index.html"
-                        class="font-bold text-brand border-b-2 border-brand py-2 transition-colors hover:text-brandHover">Início</a>
+                        class="font-semibold text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand py-2 transition-colors">Início</a>
                     <a href="campanhas.html"
-                        class="font-semibold text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand py-2 transition-colors">Campanhas</a>
+                        class="font-bold text-brand border-b-2 border-brand py-2 transition-colors hover:text-brandHover">Campanhas</a>
                     <a href="educativo.html"
                         class="font-semibold text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand py-2 transition-colors">Saiba
                         Mais</a>
@@ -96,8 +102,8 @@
                     <!-- Botão UBS (Apenas Desktop) -->
                     <a href="admin/login.html"
                         class="hidden md:flex bg-brand hover:bg-brandHover text-white px-5 py-2.5 rounded-xl font-bold transition-colors shadow-md items-center gap-2">
-                        <i data-lucide="user-plus" class="w-5 h-5"></i>
-                        Perfil
+                        <i data-lucide="calendar-plus" class="w-5 h-5"></i>
+                        Área da UBS
                     </a>
 
                     <!-- Botão Menu Mobile -->
@@ -114,92 +120,54 @@
             class="hidden md:hidden bg-white dark:bg-darkCard border-b border-gray-200 dark:border-gray-800 shadow-lg absolute w-full z-40">
             <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
                 <a href="index.html"
-                    class="w-full text-left font-bold text-brand py-3 px-2 rounded-lg bg-red-50 dark:bg-red-900/20">Início</a>
+                    class="w-full text-left font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 py-3 px-2 rounded-lg">Início</a>
                 <a href="campanhas.html"
-                    class="w-full text-left font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 py-3 px-2 rounded-lg">Campanhas</a>
+                    class="w-full text-left font-bold text-brand py-3 px-2 rounded-lg bg-red-50 dark:bg-red-900/20">Campanhas</a>
                 <a href="educativo.html"
                     class="w-full text-left font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 py-3 px-2 rounded-lg">Saiba
                     Mais</a>
                 <div class="h-px bg-gray-200 dark:bg-gray-800 my-2"></div>
                 <a href="admin/login.html"
                     class="w-full bg-brand text-white font-bold py-3 px-2 rounded-xl flex items-center justify-center gap-2 mt-2">
-                    <i data-lucide="perfil-plus" class="w-5 h-5"></i>
-                    Perfil
+                    <i data-lucide="calendar-plus" class="w-5 h-5"></i>
+                    Área da UBS
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- ÁREA DE CONTEÚDO PRINCIPAL (Apenas Conteúdo da Home) -->
-    <main class="flex-grow relative">
+    <!-- ÁREA DE CONTEÚDO PRINCIPAL (Lista de Campanhas) -->
+    <main class="flex-grow w-full">
 
-        <!-- Banner Hero -->
-        <div class="bg-white dark:bg-darkCard border-b border-gray-200 dark:border-gray-800">
+        <!-- Cabeçalho da Página -->
+        <div class="page-hero bg-brand text-white py-12 px-4 border-b border-brandHover">
+            <div class="max-w-7xl mx-auto text-center">
+                <span class="section-kicker">Agenda regional</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Campanhas na Região</h2>
+                <p class="text-red-100 font-medium max-w-2xl mx-auto">Verifique a lista completa de ações de coleta de
+                    sangue programadas.</p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+            <!-- Barra de Busca -->
             <div
-                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-6">
-                        Doe sangue, salve vidas perto de você.
-                    </h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 font-medium">
-                        Descubra ações perto de sua casa,
-                        inscreva-se facilmente e ajude a abastecer os hemocentros de sua região.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="campanhas.html"
-                            class="bg-brand hover:bg-brandHover text-white px-8 py-4 rounded-xl font-bold transition-colors shadow-lg text-center flex items-center justify-center gap-2">
-                            <i data-lucide="search" class="w-5 h-5"></i> Campanhas
-                        </a>
-                        <a href="educativo.html" class="button-secondary">
-                            <i data-lucide="clipboard-check" class="w-5 h-5"></i>
-                            Antes de doar
-                        </a>
-                    </div>
-                </div>
-
-                <aside class="hero-panel" aria-label="Resumo da próxima campanha">
-                    <img src="./assets/doacaodesangue.jpeg" alt="Pessoa realizando doação de sangue">
-                    <div class="hero-panel-info">
-                        <span class="status-pill status-open">Inscrições abertas</span>
-                        <h2>Campanha do Dia Mundial do Doador</h2>
-                        <div class="hero-panel-meta">
-                            <span><i data-lucide="calendar" class="w-4 h-4"></i> Hoje, 07:00 às 17:00</span>
-                            <span><i data-lucide="map-pin" class="w-4 h-4"></i> Ginásio Municipal, Angatuba</span>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-
-            <div class="service-strip" aria-label="Resumo do serviço">
-                <div>
-                    <strong>2</strong>
-                    <span>campanhas ativas</span>
-                </div>
-                <div>
-                    <strong>UBS</strong>
-                    <span>organização identificada</span>
-                </div>
-                <div>
-                    <strong>15 min</strong>
-                    <span>média da coleta</span>
+                class="flex flex-col md:flex-row justify-between gap-4 mb-10 pb-8 border-b border-gray-200 dark:border-gray-800">
+                <div class="relative w-full md:w-1/2 lg:w-96">
+                    <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                    <input type="text" placeholder="Buscar por cidade, local ou organizador..."
+                        class="w-full bg-white dark:bg-darkCard border border-gray-300 dark:border-gray-700 rounded-xl py-3.5 pl-12 pr-4 font-medium focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand dark:text-white shadow-sm transition-all">
                 </div>
             </div>
-        </section>
 
-        <!-- Destaques -->
-        <section class="home-campaigns max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="section-heading">
-                <div>
-                    <span class="section-kicker">Agenda de coleta</span>
-                    <h2>Próximas campanhas confirmadas</h2>
-                    <p>Informação direta para decidir rápido: quando, onde e quem organiza.</p>
-                </div>
-                <a href="campanhas.html" class="section-link hidden sm:inline-flex">Ver todas</a>
-            </div>
-
+            <!-- Grid de Campanhas -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Card Campanha Home -->
-                <a href="https://docs.google.com/forms/d/1lQDk3Z6LGOOpNGOBf8EMA14UZgDtz1NvGA7a4fl529k/edit" target="_blank"
+
+                <!-- Card 1: Angatuba -->
+                <!-- Card: Em Andamento -->
+                <a href="https://docs.google.com/forms/d/1lQDk3Z6LGOOpNGOBf8EMA14UZgDtz1NvGA7a4fl529k/edit"
+                    target="_blank"
                     class="campaign-card bg-white dark:bg-darkCard rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
 
                     <div class="relative h-40 overflow-hidden">
@@ -217,19 +185,23 @@
 
                     <div class="p-5 flex-grow flex flex-col">
                         <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">
-                            Campanha Mês Amarelo
+                            Campanha do Dia Mundial do Doador
                         </h4>
+
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                            UBS Central Angatuba
+                        </p>
 
                         <div class="space-y-2 mt-auto mb-5">
                             <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                                 <i data-lucide="calendar" class="w-4 h-4 text-brand shrink-0"></i>
-                                <span class="text-sm">11 de Maio - Saída:  05:00h</span>
+                                <span class="text-sm">Hoje, 11 de Maio — 07:00 às 17:00</span>
                             </div>
 
                             <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                                 <i data-lucide="map-pin" class="w-4 h-4 text-brand shrink-0"></i>
                                 <span class="text-sm line-clamp-1">
-                                    Colsan - Posto de Coleta Sorocaba
+                                    Ginásio Municipal, Av. Principal
                                 </span>
                             </div>
                         </div>
@@ -253,15 +225,16 @@
                         </span>
                     </div>
                     <div class="p-5 flex-grow flex flex-col">
-                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Mutirão Solidário de Abril</h4>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Mutirão Solidário de Maio</h4>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">UBS Vila Nova — Angatuba</p>
                         <div class="space-y-2 mt-auto mb-5">
                             <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                                 <i data-lucide="calendar" class="w-4 h-4 text-gray-400 shrink-0"></i>
-                                <span class="text-sm line-through text-gray-400">03 de Abril - Saída: 05:00</span>
+                                <span class="text-sm line-through text-gray-400">Sábado, 03 de Maio — 08:00</span>
                             </div>
                             <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                                 <i data-lucide="map-pin" class="w-4 h-4 text-gray-400 shrink-0"></i>
-                                <span class="text-sm line-clamp-1 text-gray-400">Colsan - Posto de Coleta Sorocaba</span>
+                                <span class="text-sm line-clamp-1 text-gray-400">Centro Comunitário, Bairro Alto</span>
                             </div>
                         </div>
                         <span
@@ -270,9 +243,29 @@
                         </span>
                     </div>
                 </div>
-            </div>
-        </section>
 
+            </div>
+
+            <!-- Paginação Simples (Exemplo Visual) -->
+            <div class="mt-12 flex justify-center">
+                <nav class="flex items-center gap-2">
+                    <button
+                        class="p-2 rounded-lg bg-white dark:bg-darkCard border border-gray-200 dark:border-gray-700 text-gray-500 hover:text-brand transition-colors shadow-sm disabled:opacity-50"
+                        disabled>
+                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
+                    <button
+                        class="w-10 h-10 rounded-lg bg-brand text-white font-bold shadow-sm flex items-center justify-center">1</button>
+                    <button
+                        class="w-10 h-10 rounded-lg bg-white dark:bg-darkCard border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:text-brand hover:border-brand transition-colors shadow-sm flex items-center justify-center font-bold">2</button>
+                    <button
+                        class="p-2 rounded-lg bg-white dark:bg-darkCard border border-gray-200 dark:border-gray-700 text-gray-500 hover:text-brand transition-colors shadow-sm">
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </button>
+                </nav>
+            </div>
+
+        </div>
     </main>
 
     <!-- RODAPÉ (FOOTER) -->
@@ -282,12 +275,20 @@
 
                 <div class="flex items-center gap-2 opacity-80">
                     <i data-lucide="droplet" class="w-5 h-5 text-brand"></i>
-                    <span class="font-bold text-gray-900 dark:text-white">Rota Solidária</span>
+                    <span class="font-bold text-gray-900 dark:text-white">Amigos do Sangue</span>
                     <span class="text-gray-500 text-sm ml-2">© 2026</span>
                 </div>
 
                 <div class="text-sm font-medium text-gray-500 text-center md:text-left">
-                    Projeto de Extensão - IFSP
+                    Projeto de Extensão - Angatuba e Região
+                </div>
+
+                <!-- Acesso Administrativo -->
+                <div>
+                    <a href="admin/login.html"
+                        class="text-sm font-bold text-gray-500 hover:text-brand transition-colors flex items-center gap-2">
+                        <i data-lucide="lock" class="w-4 h-4"></i> Acesso Restrito (Organizadores)
+                    </a>
                 </div>
             </div>
         </div>
@@ -299,7 +300,8 @@
         lucide.createIcons();
 
         // ==========================================
-        // LÓGICA DE TEMA (MODO ESCURO)
+        // LÓGICA DE TEMA E ACESSIBILIDADE 
+        // (Idêntica à index.html para consistência)
         // ==========================================
         const htmlElement = document.documentElement;
 
@@ -308,23 +310,16 @@
             const isDark = htmlElement.classList.contains('dark');
             const iconName = isDark ? 'sun' : 'moon';
 
-            // Atualizar ícone (desktop e possível mobile extra)
             const themeIcons = document.querySelectorAll('#theme-icon, #theme-icon-mobile');
             themeIcons.forEach(icon => icon.setAttribute('data-lucide', iconName));
             lucide.createIcons();
 
-            // Salvar preferência
             localStorage.setItem('temaAmigosSangue', isDark ? 'dark' : 'light');
         }
 
         const themeBtn = document.getElementById('theme-toggle');
         if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
 
-        // ==========================================
-        // LÓGICA DE ACESSIBILIDADE
-        // ==========================================
-
-        // Toggle do Menu Flutuante
         const btnAcessibilidade = document.getElementById('btn-acessibilidade');
         const menuAcessibilidade = document.getElementById('menu-acessibilidade');
 
@@ -333,14 +328,12 @@
             menuAcessibilidade.classList.toggle('hidden');
         });
 
-        // Fechar menu ao clicar fora
         document.addEventListener('click', (e) => {
             if (!btnAcessibilidade.contains(e.target) && !menuAcessibilidade.contains(e.target)) {
                 menuAcessibilidade.classList.add('hidden');
             }
         });
 
-        // Controle de Fonte
         let tamanhoFonteBase = parseInt(localStorage.getItem('tamanhoFonteAmigosSangue')) || 18;
 
         function aplicarFonte() {
@@ -350,8 +343,8 @@
 
         function alterarFonte(valor) {
             tamanhoFonteBase += valor;
-            if (tamanhoFonteBase < 14) tamanhoFonteBase = 14; // Limite mínimo
-            if (tamanhoFonteBase > 26) tamanhoFonteBase = 26; // Limite máximo
+            if (tamanhoFonteBase < 14) tamanhoFonteBase = 14;
+            if (tamanhoFonteBase > 26) tamanhoFonteBase = 26;
             aplicarFonte();
         }
 
@@ -360,19 +353,15 @@
             aplicarFonte();
         }
 
-        // Controle de Alto Contraste
         function toggleAltoContraste() {
             htmlElement.classList.toggle('alto-contraste');
             const isAltoContraste = htmlElement.classList.contains('alto-contraste');
             localStorage.setItem('altoContrasteAmigosSangue', isAltoContraste);
-            menuAcessibilidade.classList.add('hidden'); // Fecha menu ao clicar
+            menuAcessibilidade.classList.add('hidden');
         }
 
-        // ==========================================
-        // INICIALIZAÇÃO DE PREFERÊNCIAS
-        // ==========================================
         function carregarPreferencias() {
-            aplicarFonte(); // Aplica fonte salva
+            aplicarFonte();
 
             if (localStorage.getItem('altoContrasteAmigosSangue') === 'true') {
                 htmlElement.classList.add('alto-contraste');
@@ -386,29 +375,16 @@
             }
         }
 
-        carregarPreferencias(); // Executa ao carregar
+        carregarPreferencias();
 
-        // ==========================================
-        // MENU MOBILE TOGGLE
-        // ==========================================
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
         mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
     </script>
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
-        </div>
-    </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
+    <script src="vlibras/vlibras.js"></script>
 </body>
 
 </html>
