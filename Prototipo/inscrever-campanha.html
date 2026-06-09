@@ -160,7 +160,7 @@
                                 </div>
                                 <div>
                                     <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-1.5">Tipo Sanguíneo</label>
-                                    <input type="text" class="field-input" value="O+" readonly
+                                    <input type="text" class="field-input" value="O-" readonly
                                         style="opacity:0.7; cursor:not-allowed;">
                                 </div>
                             </div>
@@ -180,7 +180,7 @@
 
                         <p class="text-xs text-gray-400 dark:text-gray-500 mt-4 font-medium flex items-center gap-1.5">
                             <i data-lucide="info" class="w-3.5 h-3.5"></i>
-                            Para alterar seus dados, acesse as <a href="perfil.html" class="text-brand hover:underline font-bold">configurações do perfil</a>.
+                            Para alterar seus dados, acesse as <a href="perfil.html" class="text-brand hover:underline font-bold">configurações do perfil</a>
                         </p>
                     </div>
 
@@ -192,7 +192,7 @@
                         <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 font-medium">Alguma informação relevante para os organizadores?</p>
 
                         <textarea id="campo-observacoes" rows="3" class="field-input resize-none"
-                            placeholder="Ex: sou doador regular. . . ."></textarea>
+                            placeholder="Observações . . ."></textarea>
                         <p class="text-xs text-gray-400 dark:text-gray-500 mt-1.5 font-medium">Máximo 300 caracteres.</p>
                     </div>
 
@@ -264,10 +264,12 @@
                     <!-- Ações -->
                     <div class="bg-white dark:bg-darkCard rounded-3xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 space-y-3">
 
+                        <a href="sucesso.html">
                         <button onclick="confirmarInscricao()"
                             class="w-full bg-brand hover:bg-brandHover text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-colors shadow-md">
                             <i data-lucide="check" class="w-4 h-4"></i> Confirmar Inscrição
                         </button>
+                        </a> 
 
                         <a href="dashboard.html"
                             class="w-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-colors border border-gray-200 dark:border-gray-700 text-sm">
