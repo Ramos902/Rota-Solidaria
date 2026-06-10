@@ -129,8 +129,7 @@ html:not(.dark):not(.alto-contraste) .bg-gray-50 {
     min-height: clamp(23rem, 37vw, 30rem);
     overflow: hidden;
     border: 1px solid var(--ink);
-    border-radius: var(--radius);
-    background: var(--ink);
+    border-radius: 25px;
     box-shadow: var(--shadow-lift) !important;
 }
 
@@ -139,8 +138,8 @@ html:not(.dark):not(.alto-contraste) .bg-gray-50 {
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: fill;
-    filter: saturate(0.82) contrast(1.04);
+    object-fit: cover;
+    filter: blur(2px);
 }
 
 .hero-panel::after {
@@ -281,7 +280,6 @@ html:not(.dark):not(.alto-contraste) .bg-gray-50 {
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid var(--line-strong) !important;
-    background: var(--ink) !important;
 }
 
 .page-hero .section-kicker {

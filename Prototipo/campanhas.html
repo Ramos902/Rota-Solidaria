@@ -51,7 +51,7 @@
                 <nav class="hidden md:flex items-center gap-8">
                     <a href="index.html" class="font-semibold text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand py-2 transition-colors">Início</a>
                     <a href="campanhas.html" class="font-semibold text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand py-2 transition-colors">Campanhas</a>
-                    <a href="educativo.html" class="font-bold text-brand border-b-2 border-brand py-2 transition-colors hover:text-brandHover">Saiba Mais</a>
+                    <a href="educativo.html" class="font-semibold text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand py-2 transition-colors">Saiba Mais</a>
                 </nav>
 
                 <!-- Ações e Acessibilidade -->
@@ -144,15 +144,13 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <!-- Card 1: Angatuba -->
-                <!-- Card: Em Andamento -->
-                <a href="inscrever-campanha.html"
-                    target="_blank"
+                <!-- Card Campanha Home -->
+                <a href="inscrever-campanha.html" target="_blank"
                     class="campaign-card bg-white dark:bg-darkCard rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
 
-                    <div class="relative h-40 overflow-hidden">
+                    <div class="image-camp relative h-40 overflow-hidden">
                         <img src="./assets/doacaodesangue.jpeg" alt=""
-                            class="absolute inset-0 w-full h-full object-cover">
-
+                            class="absolute inset-0 w-full h-full object-cover grayscale">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 
                         <span
@@ -170,7 +168,7 @@
                         <div class="space-y-2 mt-auto mb-5">
                             <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                                 <i data-lucide="calendar" class="w-4 h-4 text-brand shrink-0"></i>
-                                <span class="text-sm">11 de Maio - Saída 05:00h</span>
+                                <span class="text-sm">11 de Maio - Saída:  05:00h</span>
                             </div>
 
                             <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
@@ -190,12 +188,11 @@
                 <!-- Card: Finalizada -->
                 <div
                     class="campaign-card campaign-card-closed bg-white dark:bg-darkCard rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex flex-col h-full opacity-75">
-                    <div class="relative h-40 overflow-hidden">
+                    <div class="image-camp relative h-40 overflow-hidden">
                         <img src="./assets/doacaodesangue.jpeg" alt=""
                             class="absolute inset-0 w-full h-full object-cover grayscale">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                        <span
-                            class="status-pill status-closed absolute top-3 left-3">
+                        <div class="img-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <span class="status-pill status-closed absolute top-3 left-3">
                             Finalizada
                         </span>
                     </div>
@@ -204,7 +201,7 @@
                         <div class="space-y-2 mt-auto mb-5">
                             <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                                 <i data-lucide="calendar" class="w-4 h-4 text-gray-400 shrink-0"></i>
-                                <span class="text-sm line-through text-gray-400">03 de Abril - Saída 05:00</span>
+                                <span class="text-sm line-through text-gray-400">03 de Abril - Saída: 05:00</span>
                             </div>
                             <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                                 <i data-lucide="map-pin" class="w-4 h-4 text-gray-400 shrink-0"></i>
@@ -216,6 +213,7 @@
                             Encerrada
                         </span>
                     </div>
+                </div>
                 </div>
 
             </div>
@@ -350,6 +348,20 @@
         mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
+        const navLinks = document.querySelectorAll('nav a');
+
+        navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+        if (linkPath === currentPath) {
+                // Aplica classe ativa
+                link.classList.remove('text-gray-600', 'dark:text-gray-300', 'hover:text-brand', 'dark:hover:text-brand');
+                link.classList.add('text-brand', 'font-bold', 'border-b-2', 'border-brand');
+            }
+        });
+
     </script>
     <script src="vlibras/vlibras.js"></script>
 </body>

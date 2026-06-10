@@ -140,9 +140,7 @@
                 <aside class="hero-panel" aria-label="Resumo da próxima campanha">
                     <img src="./assets/doacaodesangue.jpeg" alt="Pessoa realizando doação de sangue">
 
-                <div class="hero-overlay">
-                    <i data-lucide="heart" class="hero-heart"></i>
-                </div>
+                
 </aside>
             </div>
 
@@ -164,10 +162,9 @@
                 <a href="inscrever-campanha.html" target="_blank"
                     class="campaign-card bg-white dark:bg-darkCard rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex flex-col h-full hover:shadow-md transition-all cursor-pointer hover:-translate-y-1">
 
-                    <div class="relative h-40 overflow-hidden">
+                    <div class="image-camp relative h-40 overflow-hidden">
                         <img src="./assets/doacaodesangue.jpeg" alt=""
-                            class="absolute inset-0 w-full h-full object-cover">
-
+                            class="absolute inset-0 w-full h-full object-cover grayscale">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 
                         <span
@@ -205,12 +202,11 @@
                 <!-- Card: Finalizada -->
                 <div
                     class="campaign-card campaign-card-closed bg-white dark:bg-darkCard rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden flex flex-col h-full opacity-75">
-                    <div class="relative h-40 overflow-hidden">
+                    <div class="image-camp relative h-40 overflow-hidden">
                         <img src="./assets/doacaodesangue.jpeg" alt=""
                             class="absolute inset-0 w-full h-full object-cover grayscale">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                        <span
-                            class="status-pill status-closed absolute top-3 left-3">
+                        <div class="img-overlay absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <span class="status-pill status-closed absolute top-3 left-3">
                             Finalizada
                         </span>
                     </div>
@@ -361,18 +357,18 @@
         });
 
         // Highlight do nav item ativo baseado na página atual
-    const navLinks = document.querySelectorAll('nav a');
+        const navLinks = document.querySelectorAll('nav a');
 
-    navLinks.forEach(link => {
-    const linkPath = link.getAttribute('href');
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
-    if (linkPath === currentPath) {
-            // Aplica classe ativa
-            link.classList.remove('text-gray-600', 'dark:text-gray-300', 'hover:text-brand', 'dark:hover:text-brand');
-            link.classList.add('text-brand', 'font-bold', 'border-b-2', 'border-brand');
-        }
-    });
+        if (linkPath === currentPath) {
+                // Aplica classe ativa
+                link.classList.remove('text-gray-600', 'dark:text-gray-300', 'hover:text-brand', 'dark:hover:text-brand');
+                link.classList.add('text-brand', 'font-bold', 'border-b-2', 'border-brand');
+            }
+        });
 
     </script>
     <div vw class="enabled">
