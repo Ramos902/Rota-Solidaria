@@ -50,12 +50,6 @@ html:not(.dark):not(.alto-contraste) .bg-gray-50 {
     text-transform: uppercase;
 }
 
-.section-kicker::before {
-    width: 2.35rem;
-    height: 1px;
-    background: currentColor;
-    content: "";
-}
 
 .home-hero h1 {
     max-width: 13.5ch;
@@ -290,22 +284,8 @@ html:not(.dark):not(.alto-contraste) .bg-gray-50 {
     background: var(--ink) !important;
 }
 
-.page-hero::after {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: clamp(1rem, 9vw, 7rem);
-    width: 1px;
-    background: rgba(255, 253, 248, 0.18);
-    content: "";
-}
-
 .page-hero .section-kicker {
     color: #d9b7aa;
-}
-
-.page-hero .section-kicker::before {
-    background: #d9b7aa;
 }
 
 .page-hero h2 {

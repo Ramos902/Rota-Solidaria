@@ -45,7 +45,7 @@
                 <nav class="hidden md:flex items-center gap-8">
                     <a href="index.html" class="font-semibold text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand py-2 transition-colors">Início</a>
                     <a href="campanhas.html" class="font-semibold text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand py-2 transition-colors">Campanhas</a>
-                    <a href="educativo.html" class="font-bold text-brand border-b-2 border-brand py-2 transition-colors hover:text-brandHover">Saiba Mais</a>
+                    <a href="educativo.html" class="font-semibold text-gray-600 dark:text-gray-300 hover:text-brand dark:hover:text-brand py-2 transition-colors">Saiba Mais</a>
                 </nav>
 
                 <!-- Ações e Acessibilidade -->
@@ -358,6 +358,20 @@
         mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
+        // Highlight do nav item ativo baseado na página atual
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+    const linkPath = link.getAttribute('href');
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+    if (linkPath === currentPath) {
+            // Aplica classe ativa
+            link.classList.remove('text-gray-600', 'dark:text-gray-300', 'hover:text-brand', 'dark:hover:text-brand');
+            link.classList.add('text-brand', 'font-bold', 'border-b-2', 'border-brand');
+        }
+    });
 
     </script>
     <div vw class="enabled">
