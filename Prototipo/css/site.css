@@ -139,7 +139,7 @@ html:not(.dark):not(.alto-contraste) .bg-gray-50 {
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     filter: saturate(0.82) contrast(1.04);
 }
 
