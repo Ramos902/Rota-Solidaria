@@ -1,60 +1,88 @@
-# Rota Solidaria
+# Rota Solidária
 
-Plataforma web voltada à promoção de campanhas de doação de sangue na região. O sistema conecta doadores a campanhas organizadas por unidades de saúde locais, permitindo inscrições, acompanhamento de status e gestão administrativa das ações.
+Plataforma web voltada à promoção de campanhas de doação de sangue na região de Angatuba e Sorocaba. O sistema conecta doadores a campanhas organizadas por unidades de saúde locais, permitindo inscrições, acompanhamento de status e gestão administrativa das ações.
 
-# Tecnologias
+🔗 **[Acesse o projeto](https://ramos902.github.io/Rota-Solidaria/)**
 
-```markdown
+---
+
+## Tecnologias
+
 - HTML5
-- CSS3 (com variáveis customizadas e Tailwind CSS)
+- CSS3 (com variáveis customizadas)
 - JavaScript (vanilla)
 - Tailwind CSS (via CDN)
 - Lucide Icons
-```
+- VLibras (acessibilidade em Libras)
 
-# Front-End
+---
 
-Interface desenvolvida com HTML, CSS customizado e Tailwind CSS, estruturada em duas áreas principais: o site público, voltado aos doadores, e o painel administrativo, destinado às unidades de saúde. O site público apresenta as campanhas disponíveis, detalhes de cada ação e o fluxo de inscrição. O painel administrativo permite às unidades criar e gerenciar campanhas, acompanhar inscrições e visualizar relatórios.
+## Front-End
 
-## Protótipo
+Interface desenvolvida com HTML, CSS customizado e Tailwind CSS, estruturada em duas áreas principais: o site público, voltado aos doadores, e o painel administrativo, destinado às unidades de saúde.
 
-Para melhor otimização do desenvolvimento do projeto, os protótipos foram desenvolvido para centralizar as ideias do grupo mostrando um fluxo entre os processos do código.
+O site público apresenta as campanhas disponíveis, detalhes de cada ação e o fluxo de inscrição. O painel administrativo permite às unidades criar e gerenciar campanhas, acompanhar inscrições e visualizar relatórios básicos.
 
-# Back-End
+### Protótipo
 
-[RESUMO]
+Os protótipos foram desenvolvidos para centralizar as ideias do grupo e definir o fluxo de navegação antes da implementação.
 
-# Front-End + Interações
+> 📎 [Link para o protótipo no Figma](#) *(adicionar link)*
 
-As interações são gerenciadas inteiramente por JavaScript vanilla. O sistema implementa alternância de tema claro/escuro com persistência via localStorage, controles de acessibilidade (ajuste de tamanho de fonte e modo de alto contraste), menus responsivos para mobile e validações de formulário com feedback visual via componente de toast. As preferências do usuário são salvas entre sessões.
+### Interações
 
-## Estilização
+As interações são gerenciadas inteiramente por JavaScript vanilla. O sistema implementa:
 
-- A fonte utilizada é **Inter** (para interface geral) e **Newsreader** (para títulos), ambas importadas do Google Fonts.
-- A paleta é composta por tons quentes de areia e creme (`#fffdf8`, `#f4efe6`, `#ebe2d5`) como base, vermelho escarlate (`#8f2630`) como cor de marca e ação, e verde musgo (`#506653`) como cor de destaque secundário, criando contraste entre elementos neutros e interativos.
-- O layout combina CSS customizado com classes utilitárias do Tailwind CSS, usando Grid e Flexbox. Páginas administrativas seguem estrutura de duas colunas (formulário + sidebar); o site público alterna entre layouts de grade para listagens e coluna única para detalhes.
-- O sistema de temas é implementado via classes no elemento html (dark, alto-contraste) combinadas com variáveis CSS, permitindo troca visual completa sem recarregamento da página.
+- Alternância de tema claro/escuro com persistência via `localStorage`
+- Controles de acessibilidade: ajuste de tamanho de fonte e modo de alto contraste
+- Integração com VLibras para tradução em Língua Brasileira de Sinais
+- Menus responsivos para mobile
+- Validações de formulário com feedback visual via toast
+- Destaque dinâmico do item de navegação ativo, baseado na URL atual
 
-# Ferramentas e uso de Inteligência Artificial
-## Aplicação da IA
+As preferências do usuário (tema, fonte, contraste) são mantidas entre sessões.
 
-- **ChatGPT** - auxílio na idealização e explicação do código, com foco didático no aprendizado da estrutura do projeto.
-- **Claude** - apoio na geração e revisão de componentes de interface, formatação e revisão dos textos de documentação, promovendo clareza para o leitor.
-  
-## Ferramentas
+### Estilização
 
-- **Git e GitHub** - versionamento, trabalho colaborativo e hospedagem do projeto.
-- **Visual Studio Code** - editor de código utilizado no desenvolvimento.
-- **Google Fonts** - importação das fontes utilizadas na interface.
-- **Lucide Icons** - biblioteca de ícones SVG utilizada nos componentes visuais.
+- As fontes utilizadas são **Inter** (interface geral) e **Newsreader** (títulos), importadas do Google Fonts.
+- A paleta tem como cor de marca o vermelho `#e02035`, verde `#1a9e6e` como cor de destaque e âmbar `#f07c3a` para ações secundárias, sobre superfícies neutras em branco e lavanda claro.
+- O layout combina CSS customizado com classes utilitárias do Tailwind CSS, usando Grid e Flexbox. Páginas administrativas seguem estrutura de duas colunas (formulário + sidebar); o site público alterna entre grade para listagens e coluna única para detalhes.
+- O sistema de temas é implementado via classes no elemento `<html>` (`dark`, `alto-contraste`) combinadas com variáveis CSS, permitindo troca visual completa sem recarregamento da página.
 
-# Considerações Finais
+---
 
-[RESUMO]
+## Back-End
+
+O projeto é um protótipo front-end estático, sem back-end implementado. Não há servidor, banco de dados ou autenticação real — os dados de campanhas são hardcoded no HTML e as ações de formulário simulam respostas via JavaScript. Uma eventual evolução do projeto envolveria uma API REST e persistência em banco de dados.
+
+---
+
+## Ferramentas e uso de Inteligência Artificial
+
+### Ferramentas
+
+- **Git e GitHub** — versionamento, trabalho colaborativo e hospedagem via GitHub Pages.
+- **Visual Studio Code** — editor de código utilizado no desenvolvimento.
+- **Google Fonts** — importação das fontes utilizadas na interface.
+- **Lucide Icons** — biblioteca de ícones SVG utilizada nos componentes visuais.
+- **VLibras** — widget do governo federal para acessibilidade em Libras.
+
+### Aplicação da IA
+
+- **ChatGPT** — auxílio na idealização e explicação do código, com foco didático no aprendizado da estrutura do projeto.
+- **Claude** — apoio na geração e revisão de componentes de interface, formatação e revisão dos textos de documentação, promovendo clareza para o leitor.
+
+---
+
+## Considerações Finais
+
+O projeto foi desenvolvido como atividade de extensão do IFSP Campus Itapetininga, com o objetivo de aproximar a comunidade de ações de doação de sangue na região. O foco esteve no desenvolvimento de uma interface acessível, responsiva e funcional, aplicando na prática os conceitos de HTML, CSS e JavaScript estudados ao longo do curso.
+
+---
 
 ## Autores
 
 | | | | |
 |---|---|---|---|
-| <img src="https://github.com/andrwza.png" width="80px" style="border-radius:50%"/> | <img src="https://github.com/Buenno0.png" width="80px" style="border-radius:50%"/> | <img src="https://github.com/FernandoNino38.png" width="80px" style="border-radius:50%"/> | <img src="https://github.com/Ramos902.png" width="80px" style="border-radius:50%"/> |
+| [![Andreza](https://github.com/andrwza.png?size=80)](https://github.com/andrwza) | [![Mateus](https://github.com/Buenno0.png?size=80)](https://github.com/Buenno0) | [![Fernando](https://github.com/FernandoNino38.png?size=80)](https://github.com/FernandoNino38) | [![Ramos](https://github.com/Ramos902.png?size=80)](https://github.com/Ramos902) |
 | [Andreza](https://github.com/andrwza) | [Mateus](https://github.com/Buenno0) | [Fernando](https://github.com/FernandoNino38) | [Ramos](https://github.com/Ramos902) |
