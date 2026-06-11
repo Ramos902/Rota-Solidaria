@@ -23,12 +23,6 @@ Interface desenvolvida com HTML, CSS customizado e Tailwind CSS, estruturada em 
 
 O site público apresenta as campanhas disponíveis, detalhes de cada ação e o fluxo de inscrição. O painel administrativo permite às unidades criar e gerenciar campanhas, acompanhar inscrições e visualizar relatórios básicos.
 
-### Protótipo
-
-Os protótipos foram desenvolvidos para centralizar as ideias do grupo e definir o fluxo de navegação antes da implementação.
-
-> 📎 [Link para o protótipo no Figma](#) *(adicionar link)*
-
 ### Interações
 
 As interações são gerenciadas inteiramente por JavaScript vanilla. O sistema implementa:
